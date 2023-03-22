@@ -42,14 +42,38 @@ if($idpengguna == 'admin'){
             </script>
             <?php
         }
+    }else{
+        //jika bukan staff cari dalam table peminjam
+        $sql = "SELECT idPeminjam, katalaluan FROM peminjam WHERE nokpPeminjam = '$idpengguna'";
+        $result = $conn->query($sql);
+        if ($result->num_rows == 1) {
+            $row = $result->fetch_object();
+            if (password_verify($katalaluan, $row->katalaluan)) {
+                $_SESSION['idPeminjam'] = $row->idPeminjam;
+                //header('location:staff/index.php');
+                ?>
+                <script>
+                    alert('Anda Berjaya Log Masuk Ke Sistem');
+                    window.location = 'peminjam/';
+                </script>
+                <?php
+            } else {
+                ?>
+                <script>
+                    alert('Maaf,Kata laluan salah.3');
+                    window.location = './';
+                </script>
+                <?php
+            }
     } else {
         ?>
     <script>
-        alert('Maaf, kata laluan salah.3');
+        alert('Maaf, kata laluan salah.4');
         window.location = './';
     </script>
     <?php
 
     }
 } 
+}
 ?>

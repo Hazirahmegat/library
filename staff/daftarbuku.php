@@ -53,32 +53,36 @@
             <h1 style="text-align: center; font-size: 25px;">DAFTAR BUKU</h1>
             <form name="daftarbuku" action="" method="">
 
+            <table>
                 <div class="container">
                     <form action="/daftarbuku.php">
-                        <label for="ISBN">ISBN</label>
-                        <input type="text" id="ISBN" name="ISBN" >
+                        <tr>
+                        <td><label for="ISBN">ISBN :</label>
+                        <td><input type="text" id="ISBN" name="ISBN" ><br>
 
-                        <label for="tajuk">Tajuk Buku</label><br>
+                        <label for="tajuk">Tajuk Buku :</label>
                         <input type="text" id="tajuk" name="ltajuk" ><br>
 
-                        <label for="penulis1">Penulis 1</label><br>
+                        <label for="penulis1">Penulis 1 :</label>
                         <input type="text" id="penulis1" name="penulis1" ><br>
 
-                        <label for="penulis2">Penulis 2</label><br>
+                        <label for="penulis2">Penulis 2 :</label>
                         <input type="text" id="penulis2" name="penulis2" ><br>
 
-                        <label for="tahun">Tahun</label><br>
+                        <label for="tahun">Tahun :</label>
                         <input type="text" id="tahun" name="tahun" ><br>
 
-                        <label for="Penerbit">Penerbit</label><br>
+                        <label for="Penerbit">Penerbit :</label>
                         <input type="text" id="penerbit" name="penerbit" ><br>
 
-                        <label for="kategori">Kategori</label><br>
+                        <label for="kategori">Kategori :</label>
                         <input type="text" id="kategori" name="kategori" ><br>
 
                         <input type="submit" value="SIMPAN">
+                        <tr>
                     </form>
                 </div>
+</table>
         </section>
 
     </div>

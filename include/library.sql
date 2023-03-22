@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 22, 2023 at 02:55 AM
+-- Generation Time: Mar 22, 2023 at 03:36 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -62,6 +62,21 @@ CREATE TABLE `kategoribuku` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `peminjam`
+--
+
+CREATE TABLE `peminjam` (
+  `idPeminjam` int NOT NULL,
+  `namaPeminjam` varchar(200) NOT NULL,
+  `nokpPeminjam` varchar(20) NOT NULL,
+  `katalaluan` varchar(300) NOT NULL,
+  `noTel` int NOT NULL,
+  `namaWaris` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `staff`
 --
 
@@ -103,6 +118,13 @@ ALTER TABLE `kategoribuku`
   ADD PRIMARY KEY (`idKategori`);
 
 --
+-- Indexes for table `peminjam`
+--
+ALTER TABLE `peminjam`
+  ADD PRIMARY KEY (`idPeminjam`),
+  ADD UNIQUE KEY `nokpPeminjam` (`nokpPeminjam`);
+
+--
 -- Indexes for table `staff`
 --
 ALTER TABLE `staff`
@@ -130,6 +152,12 @@ ALTER TABLE `buku`
 --
 ALTER TABLE `kategoribuku`
   MODIFY `idKategori` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `peminjam`
+--
+ALTER TABLE `peminjam`
+  MODIFY `idPeminjam` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `staff`
