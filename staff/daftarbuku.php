@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="staff.css">
 
-  
+
 </head>
 
 
@@ -26,6 +26,7 @@
                     <div class="dropdown">
                         <button class="dropbtn">BUKU</button>
                         <div class="dropdown-content">
+                            <a href="kategori.php">KATEGORI</a>
                             <a href="daftarbuku.php">DAFTAR BUKU</a>
                             <a href="senaraibuku.php">SENARAI BUKU</a>
                         </div>
@@ -40,9 +41,9 @@
                     <div class="dropdown">
                         <button class="dropbtn">PEMINJAM</button>
                         <div class="dropdown-content">
-                            <a href="">DAFTARBARU</a>
-                            <a href="">REKODPINJAM</a>
-                            <a href="">REKODPULANGBUKU</a>
+                            <a href="daftarbaru.php">DAFTARBARU</a>
+                            <a href="rekodpinjam.php">REKODPINJAM</a>
+                            <a href="rekodpulang.php">REKODPULANGBUKU</a>
                         </div>
                     </div>
                 </ul>
@@ -50,39 +51,58 @@
         </header>
         <section>
 
-            <h1 style="text-align: center; font-size: 25px;">DAFTAR BUKU</h1>
-            <form name="daftarbuku" action="" method="">
+                    <form action="simpanbuku.php" method="post">
+                        <fieldset>
+                            <legend>DAFTAR BUKU</legend>
+                            <table>
+                                <tr>
+                                    ISBN :
+                                    <input type="text" id="ISBN" name="isbn" requied>
+                                </tr><br>
+                                <tr>
+                                    Tajuk Buku :
+                                    <input type="text" id="tajukBuku" name="tajukbuku" requied>
+                                </tr><br>
+                                <tr>
+                                    Penulis 1 :
+                                    <input type="text" id="penulis1" name="penulis1" requied>
+                                </tr><br>
+                                <tr>
+                                    Penulis 2 :
+                                    <input type="text" id="penulis2" name="penulis2">
+                                </tr><br>
+                                <tr>
+                                    Tahun :
+                                    <input type="text" id="tahun" name="tahun">
+                                </tr><br>
+                                <tr>
+                                    Penerbit :
+                                    <input type="text" id="penerbit" name="penerbit">
+                                </tr><br>
+                                <tr>
+                                    <?php
+                                    echo "<br>Student ";
+                                    require'../include/conn.php';
+                                    $query = "SELECT idKategori,namaKategori FROM kategoribuku";
+                                    if($r_set=$conn->query($query)){
+                                        echo "<SELECT name=Kategoribuku class='form-control' style='width:200px'>";
 
-            <table>
-                <div class="container">
-                    <form action="/daftarbuku.php">
-                        <tr>
-                        <td><label for="ISBN">ISBN :</label>
-                        <td><input type="text" id="ISBN" name="ISBN" ><br>
+                                        while($row=$r_set->fetch_assoc()){
+                                            echo "<option value =$row[idKategori]>$row[namaKategori]</option>";
+                                        }
+                                        echo "</select>";
+                                    }else{
+                                        echo $conn->error;
+                                    }
+                                    ?>
+                                </tr><br>
+                                <tr colspan="2">
+                                        <button type="submit">SIMPAN</button>
+                                        <button type="reset">BATAL</button>
+                                    
+                                </tr>
+                            </table>
 
-                        <label for="tajuk">Tajuk Buku :</label>
-                        <input type="text" id="tajuk" name="ltajuk" ><br>
-
-                        <label for="penulis1">Penulis 1 :</label>
-                        <input type="text" id="penulis1" name="penulis1" ><br>
-
-                        <label for="penulis2">Penulis 2 :</label>
-                        <input type="text" id="penulis2" name="penulis2" ><br>
-
-                        <label for="tahun">Tahun :</label>
-                        <input type="text" id="tahun" name="tahun" ><br>
-
-                        <label for="Penerbit">Penerbit :</label>
-                        <input type="text" id="penerbit" name="penerbit" ><br>
-
-                        <label for="kategori">Kategori :</label>
-                        <input type="text" id="kategori" name="kategori" ><br>
-
-                        <input type="submit" value="SIMPAN">
-                        <tr>
-                    </form>
-                </div>
-</table>
         </section>
 
     </div>

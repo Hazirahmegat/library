@@ -7,7 +7,7 @@ define("DBNAME",'library');
 //$host = 'localhost';
 //$user = 'root';
 //$pswd = '';
-//$dbname = 'penperel'; 
+//$dbname = 'library'; 
 
 $conn = new mysqli(HOST,USER,PSWD,DBNAME);  
 session_start();

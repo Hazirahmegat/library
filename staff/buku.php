@@ -21,31 +21,32 @@
                 <h3 style="color: white;">SISTEM PERPUSTAKAAN ELEKTRONIK DESA KAMPUNG PULAU PISANG (e-Libs)</h3>
             </div>
             <nav>
-                <ul>
-                    <li><a href="index.php">LAMANUTAMA</a></li>
-                    <div class="dropdown">
-                        <button class="dropbtn">BUKU</button>
-                        <div class="dropdown-content">
-                            <a href="daftarbuku.php">DAFTAR BUKU</a>
-                            <a href="senaraibuku.php">SENARAI BUKU</a>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="dropbtn">CARIAN</button>
-                        <div class="dropdown-content">
-                            <a href="peminjam.php">PEMINJAM</a>
-                            <a href="buku.php">BUKU</a>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="dropbtn">PEMINJAM</button>
-                        <div class="dropdown-content">
-                            <a href="daftarbaru.php">DAFTARBARU</a>
-                            <a href="rekod.php">REKODPINJAM</a>
-                            <a href="pulang.php">REKODPULANGBUKU</a>
-                        </div>
-                    </div>
-                </ul>
+            <ul>
+					<li><a href="index.php">LAMANUTAMA</a></li>
+					<div class="dropdown">
+						<button class="dropbtn">BUKU</button>
+						<div class="dropdown-content">
+							<a href="kategori.php">KATEGORI</a>
+							<a href="daftarbuku.php">DAFTAR BUKU</a>
+							<a href="senaraibuku.php">SENARAI BUKU</a>
+						</div>
+					</div>
+					<div class="dropdown">
+						<button class="dropbtn">CARIAN</button>
+						<div class="dropdown-content">
+							<a href="peminjam.php">PEMINJAM</a>
+							<a href="buku.php">BUKU</a>
+						</div>
+					</div>
+					<div class="dropdown">
+						<button class="dropbtn">PEMINJAM</button>
+						<div class="dropdown-content">
+							<a href="daftarbaru.php">DAFTARBARU</a>
+							<a href="rekodpinjam.php">REKODPINJAM</a>
+							<a href="rekodpulang.php">REKODPULANGBUKU</a>
+						</div>
+					</div>
+				</ul>
             </nav>
         </header>
         <section>

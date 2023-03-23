@@ -1,3 +1,7 @@
+<?php
+require '../include/conn.php';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -26,6 +30,7 @@
                     <div class="dropdown">
                         <button class="dropbtn">BUKU</button>
                         <div class="dropdown-content">
+                            <a href="kategori.php">KATEGORI</a>
                             <a href="daftarbuku.php">DAFTAR BUKU</a>
                             <a href="senaraibuku.php">SENARAI BUKU</a>
                         </div>
@@ -33,16 +38,16 @@
                     <div class="dropdown">
                         <button class="dropbtn">CARIAN</button>
                         <div class="dropdown-content">
-                            <a href="carian.php">PEMINJAM</a>
-                            <a href="">BUKU</a>
+                            <a href="peminjam.php">PEMINJAM</a>
+                            <a href="buku.php">BUKU</a>
                         </div>
                     </div>
                     <div class="dropdown">
                         <button class="dropbtn">PEMINJAM</button>
                         <div class="dropdown-content">
-                            <a href="">DAFTARBARU</a>
-                            <a href="">REKODPINJAM</a>
-                            <a href="">REKODPULANGBUKU</a>
+                            <a href="daftarbaru.php">DAFTARBARU</a>
+                            <a href="rekodpinjam.php">REKODPINJAM</a>
+                            <a href="rekodpulang.php">REKODPULANGBUKU</a>
                         </div>
                     </div>
                 </ul>
@@ -53,14 +58,61 @@
             <h1 style="text-align: center; font-size: 25px;">SENARAI BUKU</h1>
             <form name="daftarbuku" action="" method="">
 
-                <table class="t">
-                    <tr>
-                        <th>NO</th>
-                        <th>TAJUK</th>
-                        <th>TINDAKAN</th>
-                    </tr>
+                <div align="center">
+                    <form action="senaraibuku.php" method="post">
 
-                </table>
+                        
+                        <table class="t">
+                            <tr>
+                                <th>BIL</th>
+                                <th>ISBN</th>
+                                <th>TAJUK BUKU</th>
+                                <th>PENULIS 1</th>
+                                <th>PENULIS 2</th>
+                                <th>TAHUN</th>
+                                <th>PENERBIT</th>
+                                <th>KATEGORI</th>
+                            </tr>
+                            <?php
+                            $bil = 1;
+                            $sql = "SELECT  `ISBN`, `tajukBuku`, `penulis1`, `penulis2`, `tahun`, `penerbit`,kategoribuku.`namaKategori` FROM buku 
+                            inner join kategoribuku on kategoribuku.idKategori=buku.namaKategori ORDER BY tajukBuku";
+                            $result = $conn->query($sql);
+                            while ($row = $result->fetch_object()) {
+                                ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $bil++; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->ISBN; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->tajukBuku; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->penulis1; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->penulis2; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->tahun; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->penerbit; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->namaKategori; ?>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+                            ?>
+                        </table>
+                    </form>
+
+                </div>
         </section>
 
     </div>

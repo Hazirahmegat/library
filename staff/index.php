@@ -36,6 +36,7 @@ $namastaff = $row->namaStaff;
 					<div class="dropdown">
 						<button class="dropbtn">BUKU</button>
 						<div class="dropdown-content">
+							<a href="kategori.php">KATEGORI</a>
 							<a href="daftarbuku.php">DAFTAR BUKU</a>
 							<a href="senaraibuku.php">SENARAI BUKU</a>
 						</div>
@@ -43,16 +44,16 @@ $namastaff = $row->namaStaff;
 					<div class="dropdown">
 						<button class="dropbtn">CARIAN</button>
 						<div class="dropdown-content">
-							<a href="carian.php">PEMINJAM</a>
-							<a href="">BUKU</a>
+							<a href="peminjam.php">PEMINJAM</a>
+							<a href="buku.php">BUKU</a>
 						</div>
 					</div>
 					<div class="dropdown">
 						<button class="dropbtn">PEMINJAM</button>
 						<div class="dropdown-content">
-							<a href="">DAFTARBARU</a>
-							<a href="">REKODPINJAM</a>
-							<a href="">REKODPULANGBUKU</a>
+							<a href="daftarbaru.php">DAFTARBARU</a>
+							<a href="rekodpinjam.php">REKODPINJAM</a>
+							<a href="rekodpulang.php">REKODPULANGBUKU</a>
 						</div>
 					</div>
 				</ul>
