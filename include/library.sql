@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 22, 2023 at 02:19 PM
+-- Generation Time: Mar 29, 2023 at 03:08 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -39,14 +39,28 @@ CREATE TABLE `admin` (
 --
 
 CREATE TABLE `buku` (
+  `idBuku` int NOT NULL,
   `ISBN` int NOT NULL,
   `tajukBuku` varchar(800) NOT NULL,
   `penulis1` varchar(200) NOT NULL,
   `penulis2` varchar(200) NOT NULL,
   `tahun` int NOT NULL,
   `penerbit` varchar(200) NOT NULL,
-  `idKategori` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+  `namaKategori` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `lokasi` int NOT NULL,
+  `statusBuku` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `buku`
+--
+
+INSERT INTO `buku` (`idBuku`, `ISBN`, `tajukBuku`, `penulis1`, `penulis2`, `tahun`, `penerbit`, `namaKategori`, `lokasi`, `statusBuku`) VALUES
+(3, 1234, 'logbook', 'hazirah', '', 2019, 'snka', '16', 0, ''),
+(11, 1233, 'test', 'test1', 'test2', 2015, 'fatin', '11', 0, ''),
+(12, 12345, 'MATH SUCCESS', 'Choo wan yat', 'Yee Sook Fen', 2015, 'PELANGI', '19', 0, ''),
+(13, 978983473, 'MUET', 'Yeoh Wei Tzee', '', 2013, 'OXFORD', '20', 0, ''),
+(14, 865279303, 'SANG KANCIL', 'AINA', '', 2012, 'AIN', '18', 0, '');
 
 -- --------------------------------------------------------
 
@@ -58,6 +72,16 @@ CREATE TABLE `kategoribuku` (
   `idKategori` int NOT NULL,
   `namaKategori` varchar(800) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `kategoribuku`
+--
+
+INSERT INTO `kategoribuku` (`idKategori`, `namaKategori`) VALUES
+(11, 'Novel'),
+(18, 'Kanak-kanak'),
+(19, 'Lain-lain'),
+(20, 'Akademik');
 
 -- --------------------------------------------------------
 
@@ -74,6 +98,13 @@ CREATE TABLE `peminjam` (
   `namaWaris` varchar(200) NOT NULL,
   `noTelWaris` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `peminjam`
+--
+
+INSERT INTO `peminjam` (`idPeminjam`, `namaPeminjam`, `nokpPeminjam`, `katalaluan`, `noTel`, `namaWaris`, `noTelWaris`) VALUES
+(1, 'aten', '020825090038', '$2y$10$3igU/adg.8YmDt3KiZUCtOagiG3x0xF1T.dc6tiavZLvZ1QntRDqO', 195612029, 'hazirah', 175536169);
 
 -- --------------------------------------------------------
 
@@ -109,8 +140,8 @@ ALTER TABLE `admin`
 -- Indexes for table `buku`
 --
 ALTER TABLE `buku`
-  ADD PRIMARY KEY (`ISBN`),
-  ADD UNIQUE KEY `idKategori` (`idKategori`);
+  ADD PRIMARY KEY (`idBuku`),
+  ADD UNIQUE KEY `idKategori` (`namaKategori`);
 
 --
 -- Indexes for table `kategoribuku`
@@ -146,19 +177,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `ISBN` int NOT NULL AUTO_INCREMENT;
+  MODIFY `idBuku` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `kategoribuku`
 --
 ALTER TABLE `kategoribuku`
-  MODIFY `idKategori` int NOT NULL AUTO_INCREMENT;
+  MODIFY `idKategori` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `peminjam`
 --
 ALTER TABLE `peminjam`
-  MODIFY `idPeminjam` int NOT NULL AUTO_INCREMENT;
+  MODIFY `idPeminjam` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `staff`
