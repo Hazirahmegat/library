@@ -1,37 +1,36 @@
 nav {
     float: right;
-    word-spacing: 0px;
     padding: 20px;
 }
 
 nav li {
     display: inline-block;
-    line-height: 80px;
+    line-height: auto;
 }
 
 .wrapper {
     height: 660px;
-    width: 1350px;
-    background-color: rgb(79, 75, 70);
+    width: auto;
+    /*background-color: red;*/
 }
 
 header {
     height: 150px;
-    width: 1340px;
-    background-color: rgb(79, 75, 70);
+    width: auto;
+    background-color: rgb(252, 196, 128);
     padding: 10px;
 }
 
 section {
     height: 550px;
-    width: 1361px;
-    background-color: rgb(79, 75, 70);
+    width: auto;
+    background-color: rgb(250, 250, 242);
 }
 
 footer {
     height: 100px;
-    width: 1399px;
-    background-color: rgb(79, 75, 70);
+    width: auto;
+    background-color: rgb(248, 189, 117);
 }
 
 .logo {
@@ -49,16 +48,6 @@ li a {
     text-decoration: none;
 }
 
-nav {
-    float: right;
-    word-spacing: 30px;
-    padding: 20px;
-}
-
-nav li {
-    display: inline-block;
-    line-height: 80px;
-}
 
 section .sec_img {
     height: 550px;
@@ -76,7 +65,7 @@ section .sec_img {
 }
 
 .dropbtn {
-    background-color:rgb(79, 75, 70);
+    background-color:rgb(252, 196, 128);
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -118,39 +107,6 @@ section .sec_img {
     background-color: #3e8e41;
 }
 
-
-input[type=text], select, textarea {
-  width: 150px;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-top: 6px;
-  margin-bottom: 16px;
-}
-
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-input[type=reset] {
-    background-color: #04AA6D;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-.container {
-  border-radius: 2px;
-  background-color: #f2f2f2;
-  padding: 10px;
-}
-
 table,
 th,
 td {
@@ -160,57 +116,54 @@ td {
 
 th,
 td {
-    padding: 5px;
+    padding: 10px;
     text-align: left;
 }
 
 .t {
-    background-color: rgba(107, 168, 221, 0.817);
+    background-color: rgba(244, 249, 254, 0.817);
     margin: auto;
-    height: 50px;
-    width: 800px;
+    height: auto;
+    width: auto;
 }
 
 th{
-    background-color: rgb(249, 245, 239);
+    background-color: rgb(254, 252, 250);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-        * {
-            box-sizing: border-box;
-          }
-          
-          form.example input[type=text] {
-            padding: 10px;
-            font-size: 17px;
-            border: 1px solid grey;
-            float: left;
-            width: 70%;
-            background: #f1f1f1;
-          }
-          
-          form.example button {
-            float: left;
-            width: 7%;
-            padding: 15px;
-            background: #89b8dd;
-            color: white;
-            font-size: 10px;
-            border: 1px solid grey;
-            border-left: none;
-            cursor: pointer;
-          }
-          
-          form.example button:hover {
-            background: #0b7dda;
-          }
-          
-          form.example::after {
-            content: "";
-            clear: both;
-            display: table;
-          }
-          label {
-            display: inline-block;
-            width: 210px;
-            text-align: left;
-          }
+
+.bg{
+    background-color: beige;
+}
+
+.row {
+    margin-left:-5px;
+    margin-right:-5px;
+  }
+    
+  .column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+input{
+    width: 40%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical; 
+  }
+.example1{
+    align-content: center;
+}

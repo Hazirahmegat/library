@@ -1,16 +1,18 @@
 <?php
 require '../include/conn.php';
 
-$Uname = $_POST['namaPeminjam'];
-$Nokp = $_POST['nokpPeminjam'];
-$Pass = $_POST['katalaluan'];
-$noTel = $_POST['noTel'];
-$Wname = $_POST['namaWaris'];
-WnoTel= $_POST['noTelWaris'];
+$ISBN = $_POST['ISBN'];
+$tajukBuku = $_POST['tajukBuku'];
+$penulis1 = $_POST['penulis1'];
+$penulis2 = $_POST['penulis2'];
+$tahun = $_POST['tahun'];
+$penerbit= $_POST['penerbit'];
+$namaKategori =$_POST['namaKategori'];
+$status = $_POST['status'];
+$lokasi = $_POST['lokasi'];
 
-$sql = "INSERT INTO peminjam VALUES(NULL,'namaPeminjam','nokpPeminjam',katalaluan','noTel','namaWaris','noTelWaris');
-#Eecho ($sql)->fetch_object();
-$conn->query(sql)
-header('location:index.php')
+$sql = "SELECT * FROM peminjam VALUES(NULL,'ISBN','tajukBuku','penulis1','penulis2','tahun','penerbit','namaKategori','status','lokasi')";
+$conn->query($sql);
 
+header('location:carian.php');
 ?>

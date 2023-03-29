@@ -1,3 +1,6 @@
+<?php
+require '../include/conn.php';
+?>
 <!DOCTYPE html>
 <html>
 
@@ -12,48 +15,106 @@
 
 
 </head>
-
-
 <body>
     <div class="wrapper">
         <header>
             <div class="logo">
                 <img src="logo1.png">
-                <h3 style="color: white;">SISTEM PERPUSTAKAAN ELEKTRONIK DESA KAMPUNG PULAU PISANG (e-Libs)</h3>
+                <h3>SISTEM PERPUSTAKAAN ELEKTRONIK DESA KAMPUNG PULAU PISANG (e-Libs)</h3>
             </div>
             <nav>
                 <ul>
                     <li><a href="index.php">LAMANUTAMA</a></li>
                     <div class="dropdown">
-                        <button class="dropbtn">BUKU</button>
-                        <div class="dropdown-content">
-                            <a href="daftarbuku.php">DAFTAR BUKU</a>
-                            <a href="senaraibuku.php">SENARAI BUKU</a>
-                        </div>
+                        <button class="dropbtn">CARIAN BUKU</button>
                     </div>
                     <div class="dropdown">
-                        <button class="dropbtn" a href="carian.php">CARIAN</button>
-                        <div class="dropdown-content">
-                            <a href="peminjam.php">PEMINJAM</a>
-                            <a href="buku.php">BUKU</a>
-                        </div>
+                        <button class="dropbtn">MAKLUMAT PEMINJAM</button>
                     </div>
                     <div class="dropdown">
-                        <button class="dropbtn">PEMINJAM</button>
+                        <button class="dropbtn"><span class="fa fa-user-tie"></span>PROFIL</button>
                         <div class="dropdown-content">
-                            <a href="daftarbaru.php">DAFTARBARU</a>
-                            <a href="rekod.php">REKODPINJAM</a>
-                            <a href="pulang.php">REKODPULANGBUKU</a>
+                            <a>KEMASKINI</a>
+                            <a href="../logout.php">LOG KELUAR</a>
                         </div>
                     </div>
                 </ul>
             </nav>
         </header>
         <section>
-            <form class="example" action="/action_page.php">
+            <form class="example1" action="" method="POST">
+            <h2>Carian Buku </h2><br>
                 <input type="text" placeholder="ISBN/Tajuk Buku/Nama Penulis" name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
+                <table class="t">
+                    <tr><b>
+                        <th>BIL</th>
+                        <th>ISBN</th>
+                        <th>TAJUK BUKU</th>
+                        <th>PENULIS 1</th>
+                        <th>PENULIS 2</th>
+                        <th>TAHUN</th>
+                        <th>PENERBIT</th>
+                        <th>KATEGORI</th>
+                        <th>STATUS</th>
+                        <th>LOKASI</th>
+                    </b></tr>
+                    <?php
+                    $bil=1;
 
+                    if(isset($_POST['search'])){
+
+                    $search=$_POST['search'];
+
+                    $sql="SELECT * FROM buku
+                        WHERE tajukBuku LIKE '%$search%'
+                        OR penulis1 LIKE '%$search%'
+                        OR penulis2 LIKE '%$search%'
+                        OR ISBN LIKE '%$search%'
+
+                         ORDER BY tajukBuku";
+
+                    $result = $conn->query($sql);
+                    while($row = $result->fetch_object()){
+                    ?>
+
+                    <tr>
+                                    <td>
+                                        <?php echo $bil++; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->ISBN; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->tajukBuku; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->penulis1; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->penulis2; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->tahun; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->penerbit; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->namaKategori; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->status; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->lokasi; ?>
+                                    </td>
+                                </tr>
+                                <?php
+                    }
+                }
+                    ?>
+                </table>
             </form>
         </section>
 
