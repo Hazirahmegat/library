@@ -42,7 +42,8 @@ $namaPaminjam = $row->namaPeminjam;
                     <div class="dropdown">
                         <button class="dropbtn"><span class="fa fa-user-tie"></span>PROFIL</button>
                         <div class="dropdown-content">
-                            <a>KEMASKINI</a>
+                            <a href="kemaskini.php"> KEMASKINI</a>
+							<a>TUKAR KATA LALUAN </a>
                             <a href="../logout.php">LOG KELUAR</a>
                         </div>
                     </div>
