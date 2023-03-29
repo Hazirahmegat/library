@@ -25,7 +25,7 @@ require '../include/conn.php';
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.php">LAMANUTAMA</a></li>
+                    <li><a href="index.php">LAMAN UTAMA</a></li>
                     <div class="dropdown">
                         <button class="dropbtn">BUKU</button>
                         <div class="dropdown-content">
@@ -44,9 +44,9 @@ require '../include/conn.php';
                     <div class="dropdown">
                         <button class="dropbtn">PEMINJAM</button>
                         <div class="dropdown-content">
-                            <a href="daftarbaru.php">DAFTARBARU</a>
-                            <a href="rekod.php">REKODPINJAM</a>
-                            <a href="pulang.php">REKODPULANGBUKU</a>
+                            <a href="daftarbaru.php">DAFTAR BARU</a>
+                            <a href="rekod.php">REKOD PINJAM</a>
+                            <a href="pulang.php">REKOD PULANG BUKU</a>
                         </div>
                     </div>
                 </ul>
@@ -61,7 +61,7 @@ require '../include/conn.php';
 
                     <label for="kategori">KATEGORI</label><br>
                     <input type="text" id="kategori" name="kategori"><br>
-                    <button type="submit" >SIMPAN</button
+                    <button class="button">SIMPAN</button>
                 </form>
 
             </div><br>
@@ -86,8 +86,6 @@ require '../include/conn.php';
                             <?php echo $row->namaKategori; ?>
                         </td>
                         <td>
-                            <a href="kategori.php?namaKategori=<?php echo $row->namaKategori; ?>">Edit</a>
-                            |
                             <a href="padam.php?idKategori=<?php echo $row->idKategori; ?>"
                                 onclick="return sahkan()">Padam</a>
                         </td>

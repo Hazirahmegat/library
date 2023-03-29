@@ -22,7 +22,7 @@
             </div>
             <nav>
             <ul>
-					<li><a href="index.php">LAMANUTAMA</a></li>
+					<li><a href="index.php">LAMAN UTAMA</a></li>
 					<div class="dropdown">
 						<button class="dropbtn">BUKU</button>
 						<div class="dropdown-content">
@@ -41,9 +41,9 @@
 					<div class="dropdown">
 						<button class="dropbtn">PEMINJAM</button>
 						<div class="dropdown-content">
-							<a href="daftarbaru.php">DAFTARBARU</a>
-							<a href="rekodpinjam.php">REKODPINJAM</a>
-							<a href="rekodpulang.php">REKODPULANGBUKU</a>
+							<a href="daftarbaru.php">DAFTAR BARU</a>
+							<a href="rekodpinjam.php">REKOD PINJAM</a>
+							<a href="rekodpulang.php">REKOD PULANG BUKU</a>
 						</div>
 					</div>
 				</ul>
@@ -51,7 +51,7 @@
         </header>
         <section>
 
-            <h1 style="text-align: center; font-size: 25px;">DAFTAR BUKU</h1>
+            <h1 style="text-align: center; font-size: 25px;">CARIAN PEMINJAM</h1>
             <form name="daftarbuku" action="" method="">
 
                 <div class="container">
@@ -62,7 +62,7 @@
                         <label for="nokp">NOMBOR KAD PENGENALAN</label><br>
                         <input type="text" id="nokp" name="nokp"><br>
 
-                        <input type="submit" value="CARI">
+                        <button class="button">CARI</button>
                     </form>
                 </div>
         </section>

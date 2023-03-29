@@ -28,11 +28,11 @@ $namastaff = $row->namaStaff;
 		<header>
 			<div class="logo">
 				<img src="logo1.png">
-				<h3 style="color: white;">SISTEM PERPUSTAKAAN ELEKTRONIK DESA KAMPUNG PULAU PISANG (e-Libs)</h3>
+				<h3 style="color: black;">SISTEM PERPUSTAKAAN ELEKTRONIK DESA KAMPUNG PULAU PISANG (e-Libs)</h3>
 			</div>
 			<nav>
 				<ul>
-					<li><a href="index.php">LAMANUTAMA</a></li>
+					<li><a href="index.php">LAMAN UTAMA</a></li>
 					<div class="dropdown">
 						<button class="dropbtn">BUKU</button>
 						<div class="dropdown-content">
@@ -51,9 +51,9 @@ $namastaff = $row->namaStaff;
 					<div class="dropdown">
 						<button class="dropbtn">PEMINJAM</button>
 						<div class="dropdown-content">
-							<a href="daftarbaru.php">DAFTARBARU</a>
-							<a href="rekodpinjam.php">REKODPINJAM</a>
-							<a href="rekodpulang.php">REKODPULANGBUKU</a>
+							<a href="daftarbaru.php">DAFTAR BARU</a>
+							<a href="rekodpinjam.php">REKOD PINJAM</a>
+							<a href="rekodpulang.php">REKOD PULANG BUKU</a>
 						</div>
 					</div>
 				</ul>
@@ -71,10 +71,10 @@ $namastaff = $row->namaStaff;
 			</div>
 		</section>
 		<footer>
-			<p style="color:white;  text-align: center; ">
+			<p style="color:black;  text-align: center; ">
 				<br><br>
-				Email: <br>
-				Mobile:
+				Facebook:Perpustakaan Desa Kampung Pulau Pisang <br>
+				Mobile:04-7451019
 			</p>
 		</footer>
 	</div>

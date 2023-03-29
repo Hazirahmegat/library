@@ -10,7 +10,7 @@
   
 </head>
 <body>
-<header style="height: 90px;">
+<header>
   
 <div class="logo">
       <h1 style="color: white; font-size: 25px;word-spacing: 10px; line-height: 80px;margin-top: 20px;">ONLINE LIBRARY MANAGEMENT SYSTEM</h1>
@@ -24,10 +24,10 @@
         <h1 style="text-align: center; font-size: 25px;">Daftar Masuk</h1><br>
       <form name="login" action="login.php" method="post">
         <br><br>
-        <div class="login">
+        <div align="center" class="login">
           <input type="text" name="idpengguna" placeholder="IC" required=""> <br><br>
           <input type="password" name="katalaluan" placeholder="katalaluan" required=""> <br><br>
-          <button>Log Masuk</button></div>
+          <button align="center">Log Masuk</button></div>
       </form>
     
   </div>

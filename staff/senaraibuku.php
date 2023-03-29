@@ -26,7 +26,7 @@ require '../include/conn.php';
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.php">LAMANUTAMA</a></li>
+                    <li><a href="index.php">LAMAN UTAMA</a></li>
                     <div class="dropdown">
                         <button class="dropbtn">BUKU</button>
                         <div class="dropdown-content">
@@ -45,9 +45,9 @@ require '../include/conn.php';
                     <div class="dropdown">
                         <button class="dropbtn">PEMINJAM</button>
                         <div class="dropdown-content">
-                            <a href="daftarbaru.php">DAFTARBARU</a>
-                            <a href="rekodpinjam.php">REKODPINJAM</a>
-                            <a href="rekodpulang.php">REKODPULANGBUKU</a>
+                            <a href="daftarbaru.php">DAFTAR BARU</a>
+                            <a href="rekodpinjam.php">REKOD PINJAM</a>
+                            <a href="rekodpulang.php">REKOD PULANG BUKU</a>
                         </div>
                     </div>
                 </ul>
@@ -61,7 +61,7 @@ require '../include/conn.php';
                 <div align="center">
                     <form action="senaraibuku.php" method="post">
 
-                        
+
                         <table class="t">
                             <tr>
                                 <th>BIL</th>
@@ -72,6 +72,9 @@ require '../include/conn.php';
                                 <th>TAHUN</th>
                                 <th>PENERBIT</th>
                                 <th>KATEGORI</th>
+                                <th>TINDAKAN</th>
+                                <th>STATUS</th>
+                                <th>LOKASI</th>
                             </tr>
                             <?php
                             $bil = 1;
@@ -104,6 +107,11 @@ require '../include/conn.php';
                                     </td>
                                     <td>
                                         <?php echo $row->namaKategori; ?>
+                                    </td>
+                
+                                    <td>
+                                        <a href="senaraibuku.php?menu=senarai&edit=<?php echo $row->idBuku; ?>"
+                                            onclick="return sahkan()">edit</a>
                                     </td>
                                 </tr>
                                 <?php

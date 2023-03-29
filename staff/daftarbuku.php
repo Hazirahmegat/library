@@ -22,7 +22,7 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.php">LAMANUTAMA</a></li>
+                    <li><a href="index.php">LAMAN UTAMA</a></li>
                     <div class="dropdown">
                         <button class="dropbtn">BUKU</button>
                         <div class="dropdown-content">
@@ -41,9 +41,9 @@
                     <div class="dropdown">
                         <button class="dropbtn">PEMINJAM</button>
                         <div class="dropdown-content">
-                            <a href="daftarbaru.php">DAFTARBARU</a>
-                            <a href="rekodpinjam.php">REKODPINJAM</a>
-                            <a href="rekodpulang.php">REKODPULANGBUKU</a>
+                            <a href="daftarbaru.php">DAFTAR BARU</a>
+                            <a href="rekodpinjam.php">REKOD PINJAM</a>
+                            <a href="rekodpulang.php">REKOD PULANG BUKU</a>
                         </div>
                     </div>
                 </ul>
@@ -56,27 +56,27 @@
                             <legend>DAFTAR BUKU</legend>
                             <table>
                                 <tr>
-                                    ISBN :
+                                    ISBN :<br>
                                     <input type="text" id="ISBN" name="isbn" requied>
                                 </tr><br>
                                 <tr>
-                                    Tajuk Buku :
+                                    Tajuk Buku :<br>
                                     <input type="text" id="tajukBuku" name="tajukbuku" requied>
                                 </tr><br>
                                 <tr>
-                                    Penulis 1 :
+                                    Penulis 1 :<br>
                                     <input type="text" id="penulis1" name="penulis1" requied>
                                 </tr><br>
                                 <tr>
-                                    Penulis 2 :
+                                    Penulis 2 :<br>
                                     <input type="text" id="penulis2" name="penulis2">
                                 </tr><br>
                                 <tr>
-                                    Tahun :
+                                    Tahun :<br>
                                     <input type="text" id="tahun" name="tahun">
                                 </tr><br>
                                 <tr>
-                                    Penerbit :
+                                    Penerbit :<br>
                                     <input type="text" id="penerbit" name="penerbit">
                                 </tr><br>
                                 <tr>
@@ -96,7 +96,7 @@
                                     }
                                     ?>
                                 </tr><br>
-                                <tr colspan="2">
+                                <tr colspan="2"><br>
                                         <button type="submit">SIMPAN</button>
                                         <button type="reset">BATAL</button>
                                     
