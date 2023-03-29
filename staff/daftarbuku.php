@@ -96,6 +96,10 @@
                                     }
                                     ?>
                                 </tr><br>
+                                <tr>
+                                    Lokasi :<br>
+                                    <input type="text" id="lokasi" name="lokasi">
+                                </tr><br>
                                 <tr colspan="2"><br>
                                         <button type="submit">SIMPAN</button>
                                         <button type="reset">BATAL</button>
