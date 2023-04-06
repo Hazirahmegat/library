@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 29, 2023 at 03:08 AM
+-- Generation Time: Apr 06, 2023 at 02:49 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -109,6 +109,23 @@ INSERT INTO `peminjam` (`idPeminjam`, `namaPeminjam`, `nokpPeminjam`, `katalalua
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pinjamanbuku`
+--
+
+CREATE TABLE `pinjamanbuku` (
+  `idPinjaman` int NOT NULL,
+  `nokpPeminjam` varchar(20) NOT NULL,
+  `ISBN1` int NOT NULL,
+  `ISBN2` int NOT NULL,
+  `ISBN3` int NOT NULL,
+  `tarikhPinjam` date NOT NULL,
+  `tarikhPulang` date NOT NULL,
+  `denda` decimal(10,0) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `staff`
 --
 
@@ -157,6 +174,13 @@ ALTER TABLE `peminjam`
   ADD UNIQUE KEY `nokpPeminjam` (`nokpPeminjam`);
 
 --
+-- Indexes for table `pinjamanbuku`
+--
+ALTER TABLE `pinjamanbuku`
+  ADD PRIMARY KEY (`idPinjaman`),
+  ADD UNIQUE KEY `nokpPeminjam` (`nokpPeminjam`);
+
+--
 -- Indexes for table `staff`
 --
 ALTER TABLE `staff`
@@ -190,6 +214,12 @@ ALTER TABLE `kategoribuku`
 --
 ALTER TABLE `peminjam`
   MODIFY `idPeminjam` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `pinjamanbuku`
+--
+ALTER TABLE `pinjamanbuku`
+  MODIFY `idPinjaman` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `staff`
