@@ -17,7 +17,7 @@ require '../include/conn.php';
 </head>
 <body>
     <div class="wrapper">
-        <header>
+    <header>
             <div class="logo">
                 <img src="logo1.png">
                 <h3>SISTEM PERPUSTAKAAN ELEKTRONIK DESA KAMPUNG PULAU PISANG (e-Libs)</h3>
@@ -26,16 +26,16 @@ require '../include/conn.php';
                 <ul>
                     <li><a href="index.php">LAMANUTAMA</a></li>
                     <div class="dropdown">
-                        <button class="dropbtn">CARIAN BUKU</button>
+                        <a class="dropbtn" href="carian.php">CARIAN BUKU</a>
                     </div>
                     <div class="dropdown">
-                        <button class="dropbtn">MAKLUMAT PEMINJAM</button>
+                        <button class="dropbtn" href="makpeminjam.php">MAKLUMAT PEMINJAM</button>
                     </div>
                     <div class="dropdown">
                         <button class="dropbtn"><span class="fa fa-user-tie"></span>PROFIL</button>
                         <div class="dropdown-content">
-                            <a>KEMASKINI</a>
-                            <a>TUKAR KATA LALUAN</a>
+                            <a href="kemaskini.php"> KEMASKINI</a>
+							<a>TUKAR KATA LALUAN </a>
                             <a href="../logout.php">LOG KELUAR</a>
                         </div>
                     </div>
@@ -44,3 +44,4 @@ require '../include/conn.php';
         </header>
         <section>
             <h2> MAKLUMAT PINJAMAN </h2>
+            
