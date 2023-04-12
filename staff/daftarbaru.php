@@ -56,37 +56,33 @@
                             <legend>REKOD PINJAM BUKU</legend>
                             <table>
                                 <tr>
-                                    No.kp Peminjam :<br>
+                                    Nama Peminjam :<br>
+                                    <input type="text" id="nama" name="nama" requied>
+                                </tr><br>
+                                <tr>
+                                    No.KP Peminjam :<br>
                                     <input type="text" id="nokp" name="nokp" requied>
                                 </tr><br>
                                 <tr>
-                                    ISBN 1 :<br>
-                                    <input type="text" id="isbn1" name="isbn1" requied>
+                                    Katalaluan :<br>
+                                    <input type="text" id="katalaluan" name="katalaluan" requied>
                                 </tr><br>
                                 <tr>
-                                    ISBN 2 :<br>
-                                    <input type="text" id="isbn2" name="isbn2" requied>
+                                   Nombor Telefon :<br>
+                                    <input type="text" id="noTel" name="noTel">
                                 </tr><br>
                                 <tr>
-                                   ISBN 3 :<br>
-                                    <input type="text" id="isbn3" name="pisbn3">
+                                   Nama Waris :<br>
+                                    <input type="text" id="namawaris" name="namawaris">
                                 </tr><br>
                                 <tr>
-                                   Tarikh Pinjam :<br>
-                                    <input type="date" id="tarikhpinjam" name="tarikhpinjam">
+                                   Nombor Telefon Waris :<br>
+                                    <input type="text" id="notelWaris" name="notelWaris">
                                 </tr><br>
                                 <tr>
-                                   Tarikh Pulang :<br>
-                                    <input type="date" id="tarikhpulang" name="tarikhpulang">
-                                </tr><br>
-                                <tr>
-                                   Denda :<br>
-                                    <input type="text" id="denda" name="denda">
-                                </tr><br>
-                                
                                 
                                 <tr colspan="2"><br>
-                                        <button type="submit">PAPAR</button>                                  
+                                        <button type="submit">SIMPAN</button>                                  
                                 </tr>
                             </table>
 
