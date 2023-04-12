@@ -72,13 +72,13 @@ require '../include/conn.php';
                                 <th>TAHUN</th>
                                 <th>PENERBIT</th>
                                 <th>KATEGORI</th>
-                                <th>TINDAKAN</th>
-                                <th>STATUS</th>
                                 <th>LOKASI</th>
+                                <th>STATUS</th>
+                                <th>TINDAKAN</th>
                             </tr>
                             <?php
                             $bil = 1;
-                            $sql = "SELECT  `ISBN`, `tajukBuku`, `penulis1`, `penulis2`, `tahun`, `penerbit`,kategoribuku.`namaKategori` FROM buku 
+                            $sql = "SELECT  `ISBN`, `tajukBuku`, `penulis1`, `penulis2`, `tahun`, `penerbit`,kategoribuku.`namaKategori`,`lokasi`, `statusBuku` FROM buku 
                             inner join kategoribuku on kategoribuku.idKategori=buku.namaKategori ORDER BY tajukBuku";
                             $result = $conn->query($sql);
                             while ($row = $result->fetch_object()) {
@@ -107,6 +107,12 @@ require '../include/conn.php';
                                     </td>
                                     <td>
                                         <?php echo $row->namaKategori; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->lokasi; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row->statusBuku; ?>
                                     </td>
                 
                                     <td>

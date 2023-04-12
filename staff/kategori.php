@@ -29,7 +29,7 @@ require '../include/conn.php';
                     <div class="dropdown">
                         <button class="dropbtn">BUKU</button>
                         <div class="dropdown-content">
-                            <a href="kategori.php">KATEGORI</a>
+                            <a href="kategori.php">DAFTAR KATEGORI</a>
                             <a href="daftarbuku.php">DAFTAR BUKU</a>
                             <a href="senaraibuku.php">SENARAI BUKU</a>
                         </div>

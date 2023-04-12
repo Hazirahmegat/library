@@ -51,33 +51,34 @@
         </header>
         <section>
 
-                    <form action="simpanbuku.php" method="post">
+                    <form action="simpanrekodpinjam.php" method="post">
                         <fieldset>
                             <legend>REKOD PINJAM BUKU</legend>
                             <table>
                                 <tr>
                                     No.kp Peminjam :<br>
-                                    <input type="text" id="nokp" name="nokp" requied>
+                                    <input type="text" id="nokp" name="nokp" required>
                                 </tr><br>
                                 <tr>
                                     ISBN 1 :<br>
-                                    <input type="text" id="isbn1" name="isbn1" requied>
+                                    <input type="text" id="isbn1" name="isbn1" required>
                                 </tr><br>
                                 <tr>
                                     ISBN 2 :<br>
-                                    <input type="text" id="isbn2" name="isbn2" requied>
+                                    <input type="text" id="isbn2" name="isbn2" >
                                 </tr><br>
+
                                 <tr>
                                    ISBN 3 :<br>
-                                    <input type="text" id="isbn3" name="pisbn3">
+                                    <input type="text" id="isbn3" name="isbn3">
                                 </tr><br>
                                 <tr>
                                    Tarikh Pinjam :<br>
-                                    <input type="date" id="tarikhpinjam" name="tarikhpinjam">
+                                    <input type="date" id="tarikhpinjam" name="tarikhpinjam" required>
                                 </tr><br>
                                 <tr>
                                    Tarikh Pulang :<br>
-                                    <input type="date" id="tarikhpulang" name="tarikhpulang">
+                                    <input type="date" id="tarikhpulang" name="tarikhpulang" required>
                                 </tr><br>
                                 <tr>
                                    Denda :<br>
@@ -86,7 +87,7 @@
                                 
                                 
                                 <tr colspan="2"><br>
-                                        <button type="submit">PAPAR</button>                                  
+                                        <button type="submit">SIMPAN</button>                                  
                                 </tr>
                             </table>
 
