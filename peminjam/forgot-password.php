@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Forgot Password</title>
+    <title>Forgot Password</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -43,11 +43,12 @@
                                         <p class="mb-4">Kami memahami masalah anda. Sila masukkan alamat e-mel di bawah dan kami akan
                                              menghantar mesej untuk anda memperbaharui Kata Laluan anda.</p>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" method="post" onsubmit="process()">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Masukkan Alamat E-mail...">
+                                                
                                         </div>
                                         <a href="" class="btn btn-primary btn-user btn-block">
                                             Set Semula Kata Laluan
@@ -82,6 +83,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <script src="script.js"> </script>
 
 </body>
 

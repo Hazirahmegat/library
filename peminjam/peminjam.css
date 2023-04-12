@@ -78,6 +78,7 @@ section .sec_img {
     display: inline-block;
 }
 
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -106,7 +107,13 @@ section .sec_img {
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+.dropbtn:hover .dropbtn-content {
+    display: block;
+}
 
+.dropbtn:hover .dropbtn {
+    background-color: #3e8e41;
+}
 table,
 th,
 td {
