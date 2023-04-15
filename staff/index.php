@@ -51,8 +51,8 @@ $namastaff = $row->namaStaff;
 					<div class="dropdown">
 						<button class="dropbtn">PEMINJAM</button>
 						<div class="dropdown-content">
-							<a href="daftarbaru.php">DAFTAR BARU</a>
-							<a href="rekodpinjam.php">REKOD PINJAM</a>
+							<a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
+							<a href="rekodpinjam.php">REKOD PINJAMAN BARU</a>
 							<a href="rekodpulang.php">REKOD PULANG BUKU</a>
 						</div>
 					</div>

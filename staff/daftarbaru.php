@@ -39,29 +39,29 @@
                         </div>
                     </div>
                     <div class="dropdown">
-                        <button class="dropbtn">PEMINJAM</button>
-                        <div class="dropdown-content">
-                            <a href="daftarbaru.php">DAFTAR BARU</a>
-                            <a href="rekodpinjam.php">REKOD PINJAM</a>
-                            <a href="rekodpulang.php">REKOD PULANG BUKU</a>
-                        </div>
-                    </div>
+						<button class="dropbtn">PEMINJAM</button>
+						<div class="dropdown-content">
+							<a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
+							<a href="rekodpinjam.php">REKOD PINJAMAN BARU</a>
+							<a href="rekodpulang.php">REKOD PULANG BUKU</a>
+						</div>
+					</div>
                 </ul>
             </nav>
         </header>
         <section>
 
-                    <form action="simpanbuku.php" method="post">
+                    <form action="simpanahlibaru.php" method="post">
                         <fieldset>
-                            <legend>REKOD PINJAM BUKU</legend>
+                            <legend>DAFTAR PEMINJAM BARU</legend>
                             <table>
                                 <tr>
                                     Nama Peminjam :<br>
-                                    <input type="text" id="nama" name="nama" requied>
+                                    <input type="text" id="namapeminjam" name="namapeminjam" requied>
                                 </tr><br>
                                 <tr>
                                     No.KP Peminjam :<br>
-                                    <input type="text" id="nokp" name="nokp" requied>
+                                    <input type="text" id="nokppeminjam" name="nokppeminjam" requied>
                                 </tr><br>
                                 <tr>
                                     Katalaluan :<br>
@@ -77,7 +77,7 @@
                                 </tr><br>
                                 <tr>
                                    Nombor Telefon Waris :<br>
-                                    <input type="text" id="notelWaris" name="notelWaris">
+                                    <input type="text" id="notelwaris" name="notelwaris">
                                 </tr><br>
                                 <tr>
                                 

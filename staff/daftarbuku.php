@@ -39,13 +39,13 @@
                         </div>
                     </div>
                     <div class="dropdown">
-                        <button class="dropbtn">PEMINJAM</button>
-                        <div class="dropdown-content">
-                            <a href="daftarbaru.php">DAFTAR BARU</a>
-                            <a href="rekodpinjam.php">REKOD PINJAM</a>
-                            <a href="rekodpulang.php">REKOD PULANG BUKU</a>
-                        </div>
-                    </div>
+						<button class="dropbtn">PEMINJAM</button>
+						<div class="dropdown-content">
+							<a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
+							<a href="rekodpinjam.php">REKOD PINJAMAN BARU</a>
+							<a href="rekodpulang.php">REKOD PULANG BUKU</a>
+						</div>
+					</div>
                 </ul>
             </nav>
         </header>
@@ -82,11 +82,12 @@
                                 </tr><br>
                                 <tr>
                                     <?php
-                                    echo "<br>Kategori ";
+                                    echo "<br>Kategori<br> ";
                                     require'../include/conn.php';
                                     $query = "SELECT idKategori,namaKategori FROM kategoribuku";
                                     if($r_set=$conn->query($query)){
-                                        echo "<SELECT name=Kategoribuku class='form-control' style='width:200px'>";
+                                        echo "<SELECT name=Kategoribuku class='form-control' style='width:300px'>";
+                                        
 
                                         while($row=$r_set->fetch_assoc()){
                                             echo "<option value =$row[idKategori]>$row[namaKategori]</option>";
@@ -97,6 +98,7 @@
                                     }
                                     ?>
                                 </tr><br>
+                                <br>
                                 <tr>
                                     Lokasi :<br>
                                     <input type="text" id="lokasi" name="lokasi" required>
