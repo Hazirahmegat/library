@@ -1,10 +1,11 @@
-function process() {  //External Javascript  
-    let email = document.getElementById("email").value;                
-
-   if(email!=""){
-    alert("GOOD JOB!!!");
-   }
-   else{
-    alert("SILA MASUKKAN ALAMAT EMEL ANDA !!");
-   }
+function validateEmail() {
+    const email = document.getElementById("email").value;
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!pattern.test(email)) {
+      alert("Please enter a valid email address");
+      return false;
+    }
+    // submit form if email is valid
+    return true;
 }
+  

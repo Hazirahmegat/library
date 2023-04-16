@@ -27,8 +27,7 @@
         <div align="center" class="login">
           <input type="text" name="idpengguna" placeholder="IC" required=""> <br><br>
           <input type="password" name="katalaluan" placeholder="katalaluan" required=""> <br><br>
-          <button align="center">Log Masuk</button></div>
-      </form>
+          <button align="center">Log Masuk</button></div>  
     
   </div>
 </section>

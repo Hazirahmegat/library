@@ -43,14 +43,14 @@
                                         <p class="mb-4">Kami memahami masalah anda. Sila masukkan alamat e-mel di bawah dan kami akan
                                              menghantar mesej untuk anda memperbaharui Kata Laluan anda.</p>
                                     </div>
-                                    <form class="user" method="post" onsubmit="process()">
+                                    <form class="user" method="post" >
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Masukkan Alamat E-mail...">
                                                 
                                         </div>
-                                        <a href="" class="btn btn-primary btn-user btn-block">
+                                        <a href="" class="btn btn-primary btn-user btn-block" onclick="validateEmail()">
                                             Set Semula Kata Laluan
                                         </a>
                                         

@@ -24,19 +24,19 @@ require '../include/conn.php';
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.php">LAMANUTAMA</a></li>
+                    <li><a href="index.php">LAMAN UTAMA</a></li>
                     <div class="dropdown">
                         <a class="dropbtn" href="carian.php">CARIAN BUKU</a>
                     </div>
                     <div class="dropdown">
-                        <button class="dropbtn" href="makpeminjam.php">MAKLUMAT PEMINJAM</button>
+                        <a class="dropbtn" href="makpeminjam.php">MAKLUMAT PEMINJAM</a>
                     </div>
                     <div class="dropdown">
-                        <button class="dropbtn"><span class="fa fa-user-tie"></span>PROFIL</button>
+                        <a class="dropbtn"><span class="fa fa-user-tie"></span>PROFIL</a>
                         <div class="dropdown-content">
                             <a href="kemaskini.php"> KEMASKINI</a>
-							<a>TUKAR KATA LALUAN </a>
-                            <a href="../logout.php">LOG KELUAR</a>
+							<a href="forgot-password.php">TUKAR KATA LALUAN </a>
+                            <a href="../index.php">LOG KELUAR</a>
                         </div>
                     </div>
                 </ul>
