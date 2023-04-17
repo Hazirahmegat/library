@@ -96,7 +96,7 @@
                                         <?php echo $row->nokpPeminjam; ?>
                                     </td>
                                     <td>
-                                    <a href="rekodpinjam.php?<?php echo $row->idPeminjam; ?>"
+                                    <a href="rekodpinjam.php?id=<?php echo $row->idPeminjam; ?>"
                                         onclick="">pilih</a>
                                     </td>
                                 </tr>
