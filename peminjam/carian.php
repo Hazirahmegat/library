@@ -17,26 +17,26 @@ require '../include/conn.php';
 </head>
 <body>
     <div class="wrapper">
-        <header>
+    <header>
             <div class="logo">
                 <img src="logo1.png">
                 <h3>SISTEM PERPUSTAKAAN ELEKTRONIK DESA KAMPUNG PULAU PISANG (e-Libs)</h3>
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.php">LAMANUTAMA</a></li>
+                    <li><a href="index.php">LAMAN UTAMA</a></li>
                     <div class="dropdown">
-                        <button class="dropbtn">CARIAN BUKU</button>
+                        <a class="dropbtn" href="carian.php">CARIAN BUKU</a>
                     </div>
                     <div class="dropdown">
-                        <button class="dropbtn">MAKLUMAT PEMINJAM</button>
+                        <a class="dropbtn" href="makpeminjam.php">MAKLUMAT PEMINJAM</a>
                     </div>
                     <div class="dropdown">
-                        <button class="dropbtn"><span class="fa fa-user-tie"></span>PROFIL</button>
+                        <a class="dropbtn"><span class="fa fa-user-tie"></span>PROFIL</a>
                         <div class="dropdown-content">
-                            <a href="kemaskini.php">KEMASKINI</a>
-                            <a href="">TUKAR KATA LALUAN </a>
-                            <a href="../logout.php">LOG KELUAR</a>
+                            <a href="kemaskini.php"> KEMASKINI</a>
+							<a href="forgot-password.php">TUKAR KATA LALUAN </a>
+                            <a href="../index.php">LOG KELUAR</a>
                         </div>
                     </div>
                 </ul>

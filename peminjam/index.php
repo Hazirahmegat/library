@@ -44,7 +44,7 @@ $namaPaminjam = $row->namaPeminjam;
                         <div class="dropdown-content">
                             <a href="kemaskini.php"> KEMASKINI</a>
 							<a href="forgot-password.php">TUKAR KATA LALUAN </a>
-                            <a href="../logout.php">LOG KELUAR</a>
+                            <a href="../index.php">LOG KELUAR</a>
                         </div>
                     </div>
                 </ul>
