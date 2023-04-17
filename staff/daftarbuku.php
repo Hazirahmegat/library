@@ -39,13 +39,13 @@
                         </div>
                     </div>
                     <div class="dropdown">
-                        <button class="dropbtn">PEMINJAM</button>
-                        <div class="dropdown-content">
-                            <a href="daftarbaru.php">DAFTAR BARU</a>
-                            <a href="rekodpinjam.php">REKOD PINJAM</a>
-                            <a href="rekodpulang.php">REKOD PULANG BUKU</a>
-                        </div>
-                    </div>
+						<button class="dropbtn">PEMINJAM</button>
+						<div class="dropdown-content">
+							<a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
+							<a href="rekodpinjam.php">REKOD PINJAMAN BARU</a>
+							<a href="rekodpulang.php">REKOD PULANG BUKU</a>
+						</div>
+					</div>
                 </ul>
             </nav>
         </header>
@@ -55,17 +55,18 @@
                         <fieldset>
                             <legend>DAFTAR BUKU</legend>
                             <table>
+                    
                                 <tr>
                                     ISBN :<br>
-                                    <input type="text" id="ISBN" name="isbn" requied>
+                                    <input type="text" id="ISBN" name="isbn" required>
                                 </tr><br>
                                 <tr>
                                     Tajuk Buku :<br>
-                                    <input type="text" id="tajukBuku" name="tajukbuku" requied>
+                                    <input type="text" id="tajukBuku" name="tajukbuku" required>
                                 </tr><br>
                                 <tr>
                                     Penulis 1 :<br>
-                                    <input type="text" id="penulis1" name="penulis1" requied>
+                                    <input type="text" id="penulis1" name="penulis1" required>
                                 </tr><br>
                                 <tr>
                                     Penulis 2 :<br>
@@ -73,19 +74,20 @@
                                 </tr><br>
                                 <tr>
                                     Tahun :<br>
-                                    <input type="text" id="tahun" name="tahun">
+                                    <input type="text" id="tahun" name="tahun" required>
                                 </tr><br>
                                 <tr>
                                     Penerbit :<br>
-                                    <input type="text" id="penerbit" name="penerbit">
+                                    <input type="text" id="penerbit" name="penerbit" required>
                                 </tr><br>
                                 <tr>
                                     <?php
-                                    echo "<br>Student ";
+                                    echo "<br>Kategori<br> ";
                                     require'../include/conn.php';
                                     $query = "SELECT idKategori,namaKategori FROM kategoribuku";
                                     if($r_set=$conn->query($query)){
-                                        echo "<SELECT name=Kategoribuku class='form-control' style='width:200px'>";
+                                        echo "<SELECT name=Kategoribuku class='form-control' style='width:300px'>";
+                                        
 
                                         while($row=$r_set->fetch_assoc()){
                                             echo "<option value =$row[idKategori]>$row[namaKategori]</option>";
@@ -96,9 +98,14 @@
                                     }
                                     ?>
                                 </tr><br>
+                                <br>
                                 <tr>
                                     Lokasi :<br>
-                                    <input type="text" id="lokasi" name="lokasi">
+                                    <input type="text" id="lokasi" name="lokasi" required>
+                                </tr><br>
+                                <tr>
+                                    Status :<br>
+                                    <input type="text" id="status" name="statusBuku" required>
                                 </tr><br>
                                 <tr colspan="2"><br>
                                         <button type="submit">SIMPAN</button>

@@ -41,8 +41,8 @@
                     <div class="dropdown">
                         <button class="dropbtn">PEMINJAM</button>
                         <div class="dropdown-content">
-                            <a href="daftarbaru.php">DAFTAR BARU</a>
-                            <a href="rekodpinjam.php">REKOD PINJAM</a>
+                            <a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
+                            <a href="rekodpinjam.php">REKOD PINJAMAN BARU</a>
                             <a href="rekodpulang.php">REKOD PULANG BUKU</a>
                         </div>
                     </div>
@@ -50,46 +50,8 @@
             </nav>
         </header>
         <section>
-
-                    <form action="simpanbuku.php" method="post">
-                        <fieldset>
-                            <legend>REKOD PINJAM BUKU</legend>
-                            <table>
-                                <tr>
-                                    No.kp Peminjam :<br>
-                                    <input type="text" id="nokp" name="nokp" requied>
-                                </tr><br>
-                                <tr>
-                                    ISBN 1 :<br>
-                                    <input type="text" id="isbn1" name="isbn1" requied>
-                                </tr><br>
-                                <tr>
-                                    ISBN 2 :<br>
-                                    <input type="text" id="isbn2" name="isbn2" requied>
-                                </tr><br>
-                                <tr>
-                                   ISBN 3 :<br>
-                                    <input type="text" id="isbn3" name="pisbn3">
-                                </tr><br>
-                                <tr>
-                                   Tarikh Pinjam :<br>
-                                    <input type="date" id="tarikhpinjam" name="tarikhpinjam">
-                                </tr><br>
-                                <tr>
-                                   Tarikh Pulang :<br>
-                                    <input type="date" id="tarikhpulang" name="tarikhpulang">
-                                </tr><br>
-                                <tr>
-                                   Denda :<br>
-                                    <input type="text" id="denda" name="denda">
-                                </tr><br>
-                                
-                                
-                                <tr colspan="2"><br>
-                                        <button type="submit">PAPAR</button>                                  
-                                </tr>
-                            </table>
-
+                <h2>REKOD PINJAMAN BARU</h2>
+            
         </section>
 
     </div>

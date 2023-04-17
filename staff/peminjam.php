@@ -41,8 +41,8 @@
 					<div class="dropdown">
 						<button class="dropbtn">PEMINJAM</button>
 						<div class="dropdown-content">
-							<a href="daftarbaru.php">DAFTAR BARU</a>
-							<a href="rekodpinjam.php">REKOD PINJAM</a>
+							<a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
+							<a href="rekodpinjam.php">REKOD PINJAMAN BARU</a>
 							<a href="rekodpulang.php">REKOD PULANG BUKU</a>
 						</div>
 					</div>
@@ -51,21 +51,62 @@
         </header>
         <section>
 
-            <h1 style="text-align: center; font-size: 25px;">CARIAN PEMINJAM</h1>
-            <form name="daftarbuku" action="" method="">
+        <form action="" method="post">
+                <fieldset>
+                    <legend>REKOD PINJAMAN BUKU</legend>
+                    <table>
+                        <tr>
+                            No.KP Peminjam :<br>
+                            <input type="text" id="nokp" name="nokpPeminjam" required>
+                        </tr><br>
 
-                <div class="container">
-                    <form action="/peminjam.php">
-                        <label for="nama">NAMA</label><br>
-                        <input type="text" id="nama" name="nama"><br>
+                        <tr colspan="2"><br>
+                            <button type="submit" name="submit">PAPAR</button>
+                        </tr>
+                    </table>
 
-                        <label for="nokp">NOMBOR KAD PENGENALAN</label><br>
-                        <input type="text" id="nokp" name="nokp"><br>
+                    <table class="t">
+                        <tr>
+                            <th>idPeminjam</th>
+                            <th>Nama Peminjam</th>
+                            <th>No.KP Peminjam</th>
+                            <th>Tindakan</th>
+                        </tr>
+                        <?php
+                        require '../include/conn.php';
+                        $bil = 1;
 
-                        <button class="button">CARI</button>
-                    </form>
-                </div>
+                        if (isset($_POST['submit'])) {
+
+                            $search = $_POST['nokpPeminjam'];
+
+                            $sql = "SELECT idPeminjam,namaPeminjam,nokpPeminjam FROM peminjam where nokpPeminjam = '$search'";
+
+                            $result = $conn->query($sql);
+                            while ($row = $result->fetch_object()) {
+                                ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $bil++; ?>
+                                    </td><br>
+                                    <td>
+                                        <?php echo $row->namaPeminjam; ?>
+                                    </td><br>
+                                    <td>
+                                        <?php echo $row->nokpPeminjam; ?>
+                                    </td>
+                                    <td>
+                                    <a href="rekodpinjam.php?<?php echo $row->idPeminjam; ?>"
+                                        onclick="">pilih</a>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+                        }
+                        ?>
+                    </table>
         </section>
+
 
     </div>
 </body>

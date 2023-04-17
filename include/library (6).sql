@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 06, 2023 at 02:49 AM
+-- Generation Time: Apr 12, 2023 at 03:45 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -57,10 +57,10 @@ CREATE TABLE `buku` (
 
 INSERT INTO `buku` (`idBuku`, `ISBN`, `tajukBuku`, `penulis1`, `penulis2`, `tahun`, `penerbit`, `namaKategori`, `lokasi`, `statusBuku`) VALUES
 (3, 1234, 'logbook', 'hazirah', '', 2019, 'snka', '16', 0, ''),
-(11, 1233, 'test', 'test1', 'test2', 2015, 'fatin', '11', 0, ''),
 (12, 12345, 'MATH SUCCESS', 'Choo wan yat', 'Yee Sook Fen', 2015, 'PELANGI', '19', 0, ''),
 (13, 978983473, 'MUET', 'Yeoh Wei Tzee', '', 2013, 'OXFORD', '20', 0, ''),
-(14, 865279303, 'SANG KANCIL', 'AINA', '', 2012, 'AIN', '18', 0, '');
+(14, 865279303, 'SANG KANCIL', 'AINA', '', 2012, 'AIN', '18', 0, ''),
+(16, 126543267, 'MARVEL', 'MAHARANI', '', 2011, 'ELINE', '11', 12, 'ADA');
 
 -- --------------------------------------------------------
 
@@ -81,7 +81,8 @@ INSERT INTO `kategoribuku` (`idKategori`, `namaKategori`) VALUES
 (11, 'Novel'),
 (18, 'Kanak-kanak'),
 (19, 'Lain-lain'),
-(20, 'Akademik');
+(20, 'Akademik'),
+(21, 'Fiksyen');
 
 -- --------------------------------------------------------
 
@@ -116,8 +117,8 @@ CREATE TABLE `pinjamanbuku` (
   `idPinjaman` int NOT NULL,
   `nokpPeminjam` varchar(20) NOT NULL,
   `ISBN1` int NOT NULL,
-  `ISBN2` int NOT NULL,
-  `ISBN3` int NOT NULL,
+  `ISBN2` int DEFAULT NULL,
+  `ISBN3` int DEFAULT NULL,
   `tarikhPinjam` date NOT NULL,
   `tarikhPulang` date NOT NULL,
   `denda` decimal(10,0) NOT NULL
@@ -201,13 +202,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `idBuku` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idBuku` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `kategoribuku`
 --
 ALTER TABLE `kategoribuku`
-  MODIFY `idKategori` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idKategori` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `peminjam`

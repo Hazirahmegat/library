@@ -29,7 +29,7 @@ require '../include/conn.php';
                     <div class="dropdown">
                         <button class="dropbtn">BUKU</button>
                         <div class="dropdown-content">
-                            <a href="kategori.php">KATEGORI</a>
+                            <a href="kategori.php">DAFTAR KATEGORI</a>
                             <a href="daftarbuku.php">DAFTAR BUKU</a>
                             <a href="senaraibuku.php">SENARAI BUKU</a>
                         </div>
@@ -42,13 +42,13 @@ require '../include/conn.php';
                         </div>
                     </div>
                     <div class="dropdown">
-                        <button class="dropbtn">PEMINJAM</button>
-                        <div class="dropdown-content">
-                            <a href="daftarbaru.php">DAFTAR BARU</a>
-                            <a href="rekod.php">REKOD PINJAM</a>
-                            <a href="pulang.php">REKOD PULANG BUKU</a>
-                        </div>
-                    </div>
+						<button class="dropbtn">PEMINJAM</button>
+						<div class="dropdown-content">
+							<a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
+							<a href="rekodpinjam.php">REKOD PINJAMAN BARU</a>
+							<a href="rekodpulang.php">REKOD PULANG BUKU</a>
+						</div>
+					</div>
                 </ul>
                 </form>
             </nav>
@@ -59,7 +59,7 @@ require '../include/conn.php';
             <div align="center">
                 <form action="simpan.php" method="post">
 
-                    <label for="kategori">KATEGORI</label><br>
+                    <label for="kategori">DAFTAR KATEGORI</label><br>
                     <input type="text" id="kategori" name="kategori"><br>
                     <button class="button">SIMPAN</button>
                 </form>
@@ -87,7 +87,7 @@ require '../include/conn.php';
                         </td>
                         <td>
                             <a href="padam.php?idKategori=<?php echo $row->idKategori; ?>"
-                                onclick="return sahkan()">Padam</a>
+                                onclick="return sahkan()">EDIT</a>
                         </td>
                     </tr>
                     <?php
