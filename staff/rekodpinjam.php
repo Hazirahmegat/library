@@ -88,7 +88,7 @@ while ($row2 = mysqli_fetch_assoc($result3)) {
                             <?php if ($jumlahpinjaman <= '2') { ?>
                                 <button type="submit" name="submit">PAPAR</button>
                             <?php } else {
-                                echo "LIMIT BUKU ADALAH 5";
+                                echo "LIMIT BUKU ADALAH 3";
                             } ?>
                         </tr>
                     </table>
@@ -161,7 +161,7 @@ while ($row2 = mysqli_fetch_assoc($result3)) {
 
                 } ?>
 
-                <button type="submit" name="submit">PAPAR SENARAI PINJAMAN</button>
+                
 
         </section>
 

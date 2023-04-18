@@ -65,6 +65,7 @@
                                     <th>TAJUK BUKU</th>
                                     <th>TARIKH PINJAM</th>
                                     <th>TARIKH PULANG</th>
+                                    <th>TINDAKAN</th>
 
                                 </b></tr>
                             <?php
@@ -104,7 +105,10 @@
                                     <td>
                                         <?php echo $row->tarikhPulang; ?>
                                     </td>
-                                   
+                                    <td>
+                                    <a href="rekodpulang.php?id=<?php echo $row->idPeminjam; ?>"
+                                        onclick="">kemaskini</a>
+                            </td>
 
                                 </tr>
 

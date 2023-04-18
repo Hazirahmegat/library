@@ -35,56 +35,59 @@
                         <button class="dropbtn">CARIAN</button>
                         <div class="dropdown-content">
                             <a href="peminjam.php">PEMINJAM</a>
-                            
+
                         </div>
                     </div>
                     <div class="dropdown">
-						<button class="dropbtn">PEMINJAM</button>
-						<div class="dropdown-content">
-							<a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
-							<a href="pinjamanbaru.php">REKOD PINJAMAN BARU</a>
-							<a href="rekodpulang.php">REKOD PULANG BUKU</a>
-						</div>
-					</div>
+                        <button class="dropbtn">PEMINJAM</button>
+                        <div class="dropdown-content">
+                            <a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
+                            <a href="pinjamanbaru.php">REKOD PINJAMAN BARU</a>
+                            <a href="rekodpulang.php">REKOD PULANG BUKU</a>
+                        </div>
+                    </div>
                 </ul>
             </nav>
         </header>
         <section>
 
-                    <form action="simpanahlibaru.php" method="post">
-                        <fieldset>
-                            <legend>DAFTAR PEMINJAM BARU</legend>
-                            <table>
-                                <tr>
-                                    Nama Peminjam :<br>
-                                    <input type="text" id="namapeminjam" name="namapeminjam" requied>
-                                </tr><br>
-                                <tr>
-                                    No.KP Peminjam :<br>
-                                    <input type="text" id="nokppeminjam" name="nokppeminjam" requied>
-                                </tr><br>
-                                <tr>
-                                    Katalaluan :<br>
-                                    <input type="text" id="katalaluan" name="katalaluan" requied>
-                                </tr><br>
-                                <tr>
-                                   Nombor Telefon :<br>
-                                    <input type="text" id="noTel" name="noTel">
-                                </tr><br>
-                                <tr>
-                                   Nama Waris :<br>
-                                    <input type="text" id="namawaris" name="namawaris">
-                                </tr><br>
-                                <tr>
-                                   Nombor Telefon Waris :<br>
-                                    <input type="text" id="notelwaris" name="notelwaris">
-                                </tr><br>
-                                <tr>
-                                
-                                <tr colspan="2"><br>
-                                        <button type="submit">SIMPAN</button>                                  
-                                </tr>
-                            </table>
+            <form action="simpanahlibaru.php" method="post">
+                <fieldset>
+                    <legend>DAFTAR PEMINJAM BARU</legend>
+                    <table>
+                        <tr>
+                            Nama Peminjam :<br>
+                            <input type="text" id="namapeminjam" name="namapeminjam" style="text-transform: uppercase"
+                                requied>
+                        </tr><br>
+                        <tr>
+                            No.KP Peminjam :<br>
+                            <input type="text" id="nokppeminjam" name="nokppeminjam" style="text-transform: uppercase"
+                                requied>
+                        </tr><br>
+                        <tr>
+                            Katalaluan :<br>
+                            <input type="text" id="katalaluan" name="katalaluan" style="text-transform: uppercase"
+                                requied>
+                        </tr><br>
+                        <tr>
+                            Nombor Telefon :<br>
+                            <input type="text" id="noTel" name="noTel">
+                        </tr><br>
+                        <tr>
+                            Nama Waris :<br>
+                            <input type="text" id="namawaris" name="namawaris" style="text-transform: uppercase">
+                        </tr><br>
+                        <tr>
+                            Nombor Telefon Waris :<br>
+                            <input type="text" id="notelwaris" name="notelwaris" style="text-transform: uppercase">
+                        </tr><br>
+                        <tr>
+
+                        <tr colspan="2"><br>
+                            <button type="submit">SIMPAN</button>
+                        </tr>
+                    </table>
 
         </section>
 
