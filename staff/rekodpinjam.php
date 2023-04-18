@@ -55,14 +55,14 @@ while ($row2 = mysqli_fetch_assoc($result3)) {
                         <button class="dropbtn">CARIAN</button>
                         <div class="dropdown-content">
                             <a href="peminjam.php">PEMINJAM</a>
-                            <a href="buku.php">BUKU</a>
+                            
                         </div>
                     </div>
                     <div class="dropdown">
                         <button class="dropbtn">PEMINJAM</button>
                         <div class="dropdown-content">
                             <a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
-                            <a href="rekodpinjam.php">REKOD PINJAMAN BARU</a>
+                            <a href="pinjamanbaru.php">REKOD PINJAMAN BARU</a>
                             <a href="rekodpulang.php">REKOD PULANG BUKU</a>
                         </div>
                     </div>
@@ -72,8 +72,8 @@ while ($row2 = mysqli_fetch_assoc($result3)) {
         <section>
             <fieldset>
                 <legend>REKOD PINJAMAN BUKU</legend>
-                <h4>Maklumat Peminjam</h4>
-                <p>Nama:
+                <h4>MAKLUMAT PEMINJAM</h4>
+                <p>NAMA PEMINJAM :
                     <?php echo $namaPeminjam; ?>
                 </p>
                 <h4>Carian Buku</h4>
@@ -88,7 +88,7 @@ while ($row2 = mysqli_fetch_assoc($result3)) {
                             <?php if ($jumlahpinjaman <= '2') { ?>
                                 <button type="submit" name="submit">PAPAR</button>
                             <?php } else {
-                                echo "Anda Telah Meminjam lebih daripada 3 Buah Buku";
+                                echo "LIMIT BUKU ADALAH 5";
                             } ?>
                         </tr>
                     </table>

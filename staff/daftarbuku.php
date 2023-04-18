@@ -35,84 +35,91 @@
                         <button class="dropbtn">CARIAN</button>
                         <div class="dropdown-content">
                             <a href="peminjam.php">PEMINJAM</a>
-                            <a href="buku.php">BUKU</a>
+                            
                         </div>
                     </div>
                     <div class="dropdown">
-						<button class="dropbtn">PEMINJAM</button>
-						<div class="dropdown-content">
-							<a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
-							<a href="rekodpinjam.php">REKOD PINJAMAN BARU</a>
-							<a href="rekodpulang.php">REKOD PULANG BUKU</a>
-						</div>
-					</div>
+                        <button class="dropbtn">PEMINJAM</button>
+                        <div class="dropdown-content">
+                            <a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
+                            <a href="pinjamanbaru.php">REKOD PINJAMAN BARU</a>
+                            <a href="rekodpulang.php">REKOD PULANG BUKU</a>
+                        </div>
+                    </div>
                 </ul>
             </nav>
         </header>
         <section>
 
-                    <form action="simpanbuku.php" method="post">
-                        <fieldset>
-                            <legend>DAFTAR BUKU</legend>
-                            <table>
-                    
-                                <tr>
-                                    ISBN :<br>
-                                    <input type="text" id="ISBN" name="isbn" required>
-                                </tr><br>
-                                <tr>
-                                    Tajuk Buku :<br>
-                                    <input type="text" id="tajukBuku" name="tajukbuku" required>
-                                </tr><br>
-                                <tr>
-                                    Penulis 1 :<br>
-                                    <input type="text" id="penulis1" name="penulis1" required>
-                                </tr><br>
-                                <tr>
-                                    Penulis 2 :<br>
-                                    <input type="text" id="penulis2" name="penulis2">
-                                </tr><br>
-                                <tr>
-                                    Tahun :<br>
-                                    <input type="text" id="tahun" name="tahun" required>
-                                </tr><br>
-                                <tr>
-                                    Penerbit :<br>
-                                    <input type="text" id="penerbit" name="penerbit" required>
-                                </tr><br>
-                                <tr>
-                                    <?php
-                                    echo "<br>Kategori<br> ";
-                                    require'../include/conn.php';
-                                    $query = "SELECT idKategori,namaKategori FROM kategoribuku";
-                                    if($r_set=$conn->query($query)){
-                                        echo "<SELECT name=Kategoribuku class='form-control' style='width:300px'>";
-                                        
+            <form action="simpanbuku.php" method="post">
+                <fieldset>
+                    <legend>DAFTAR BUKU</legend>
+                    <table>
 
-                                        while($row=$r_set->fetch_assoc()){
-                                            echo "<option value =$row[idKategori]>$row[namaKategori]</option>";
-                                        }
-                                        echo "</select>";
-                                    }else{
-                                        echo $conn->error;
-                                    }
-                                    ?>
-                                </tr><br>
-                                <br>
-                                <tr>
-                                    Lokasi :<br>
-                                    <input type="text" id="lokasi" name="lokasi" required>
-                                </tr><br>
-                                <tr>
-                                    Status :<br>
-                                    <input type="text" id="status" name="statusBuku" required>
-                                </tr><br>
-                                <tr colspan="2"><br>
-                                        <button type="submit">SIMPAN</button>
-                                        <button type="reset">BATAL</button>
-                                    
-                                </tr>
-                            </table>
+                        <tr>
+                            ISBN :<br>
+                            <input type="text" id="ISBN" name="isbn" style="text-transform: uppercase" required>
+                        </tr><br>
+                        <tr>
+                            Tajuk Buku :<br>
+                            <input type="text" id="tajukBuku" name="tajukbuku" style="text-transform: uppercase"
+                                required>
+                        </tr><br>
+                        <tr>
+                            Penulis 1 :<br>
+                            <input type="text" id="penulis1" name="penulis1" style="text-transform: uppercase" required>
+                        </tr><br>
+                        <tr>
+                            Penulis 2 :<br>
+                            <input type="text" id="penulis2" name="penulis2" style="text-transform: uppercase">
+                        </tr><br>
+                        <tr>
+                            Tahun :<br>
+                            <input type="text" id="tahun" name="tahun" style="text-transform: uppercase" required>
+                        </tr><br>
+                        <tr>
+                            Penerbit :<br>
+                            <input type="text" id="penerbit" name="penerbit" style="text-transform: uppercase" required>
+                        </tr><br>
+                        <tr>
+                            <?php
+                            echo "<br>Kategori<br> ";
+                            require '../include/conn.php';
+                            $query = "SELECT idKategori,namaKategori FROM kategoribuku";
+                            if ($r_set = $conn->query($query)) {
+                                echo "<SELECT name=Kategoribuku class='form-control' style='width:360px'>";
+
+
+                                while ($row = $r_set->fetch_assoc()) {
+                                    echo "<option value =$row[idKategori]>$row[namaKategori]</option>";
+                                }
+                                echo "</select>";
+                            } else {
+                                echo $conn->error;
+                            }
+                            ?>
+                        </tr><br>
+                        <br>
+                        <tr>
+                            Lokasi :<br>
+                            <input type="text" id="lokasi" name="lokasi" style="text-transform: uppercase" required>
+                        </tr><br>
+                        <br>
+                        <tr>
+                            <label for="status">Status Buku :</label><br>
+                            <br>
+                            <select id="status" name="statusBuku" style='width:360px'>
+                                <option value="ada">ADA</option>
+                                <option value="dipinjam">DIPINJAM</option>
+                                <option value="tiada">TIADA</option>
+                            </select>
+                        </tr><br>
+                        <tr colspan="2"><br>
+                            <button type="submit">SIMPAN</button>
+                            <button type="reset">BATAL</button>
+
+                        </tr>
+                    </table>
 
         </section>
 

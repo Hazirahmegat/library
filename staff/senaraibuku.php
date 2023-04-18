@@ -35,14 +35,14 @@
                         <button class="dropbtn">CARIAN</button>
                         <div class="dropdown-content">
                             <a href="peminjam.php">PEMINJAM</a>
-                            <a href="buku.php">BUKU</a>
+                            
                         </div>
                     </div>
                     <div class="dropdown">
                         <button class="dropbtn">PEMINJAM</button>
                         <div class="dropdown-content">
                             <a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
-                            <a href="rekodpinjam.php">REKOD PINJAMAN BARU</a>
+                            <a href="pinjamanbaru.php">REKOD PINJAMAN BARU</a>
                             <a href="rekodpulang.php">REKOD PULANG BUKU</a>
                         </div>
                     </div>
@@ -55,98 +55,98 @@
 
 
             <div align="center">
-            <form action="" method="POST">
-                <tr>
-                    <?php
-                    echo "<br>Kategori<br>";
-                    require '../include/conn.php';
-                    $query = "SELECT idKategori,namaKategori FROM kategoribuku";
-                    if ($r_set = $conn->query($query)) {
-                        echo "<SELECT name=Kategoribuku class='form-control' style='width:300px'>";
-
-                        while ($row = $r_set->fetch_assoc()) {
-                            echo "<option value =$row[idKategori]>$row[namaKategori]</option>";
-                        }
-                        echo "</select>";
-                    } else {
-                        echo $conn->error;
-                    }
-                    ?>
-                </tr><br>
-                <br>
-
-               
-                <tr>
-                    
-                    <button type="submit" name="submit">PAPAR</button>
-                    <table class="t"><br>
-                    <br>
-                        <tr><b>
-                                <th>BIL</th>
-                                <th>ISBN</th>
-                                <th>TAJUK BUKU</th>
-                                <th>PENULIS 1</th>
-                                <th>PENULIS 2</th>
-                                <th>TAHUN</th>
-                                <th>PENERBIT</th>
-                                <th>KATEGORI</th>
-                                <th>STATUS</th>
-                                <th>LOKASI</th>
-                            </b></tr>
+                <form action="" method="POST">
+                    <tr>
                         <?php
-                        $bil = 1;
+                        echo "<br>Kategori<br>";
+                        require '../include/conn.php';
+                        $query = "SELECT idKategori,namaKategori FROM kategoribuku";
+                        if ($r_set = $conn->query($query)) {
+                            echo "<SELECT name=Kategoribuku class='form-control' style='width:300px'>";
 
-                        if (isset($_POST['submit'])) {
-
-                            $search = $_POST['Kategoribuku'];
-
-                             $sql = "SELECT `ISBN`, `tajukBuku`, `penulis1`, `penulis2`, `tahun`, `penerbit`, b.`namaKategori`, `lokasi`, `statusBuku` 
-                            FROM buku a inner join kategoribuku b on a.namaKategori =b.idKategori
-                        WHERE a.namaKategori LIKE '%$search%'
-
-                         ORDER BY tajukBuku";
-
-                            $result = $conn->query($sql);
-                            while ($row = $result->fetch_object()) {
-                                ?>
-
-                                <tr>
-                                    <td>
-                                        <?php echo $bil++; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row->ISBN; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row->tajukBuku; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row->penulis1; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row->penulis2; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row->tahun; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row->penerbit; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row->namaKategori; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row->statusBuku; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row->lokasi; ?>
-                                    </td>
-                                </tr>
-                                <?php
+                            while ($row = $r_set->fetch_assoc()) {
+                                echo "<option value =$row[idKategori]>$row[namaKategori]</option>";
                             }
+                            echo "</select>";
+                        } else {
+                            echo $conn->error;
                         }
                         ?>
-                    </table>
+                    </tr><br>
+                    <br>
+
+
+                    <tr>
+
+                        <button type="submit" name="submit">PAPAR</button>
+                        <table class="t"><br>
+                            <br>
+                            <tr><b>
+                                    <th>BIL</th>
+                                    <th>ISBN</th>
+                                    <th>TAJUK BUKU</th>
+                                    <th>PENULIS 1</th>
+                                    <th>PENULIS 2</th>
+                                    <th>TAHUN</th>
+                                    <th>PENERBIT</th>
+                                    <th>KATEGORI</th>
+                                    <th>STATUS</th>
+                                    <th>LOKASI</th>
+                                </b></tr>
+                            <?php
+                            $bil = 1;
+
+                            if (isset($_POST['submit'])) {
+
+                                $search = $_POST['Kategoribuku'];
+
+                                $sql = "SELECT `ISBN`, `tajukBuku`, `penulis1`, `penulis2`, `tahun`, `penerbit`, b.`namaKategori`, `lokasi`, `statusBuku` 
+                                FROM buku a inner join kategoribuku b on a.namaKategori =b.idKategori
+                                WHERE a.namaKategori LIKE '%$search%'
+
+                                ORDER BY tajukBuku";
+
+                                $result = $conn->query($sql);
+                                while ($row = $result->fetch_object()) {
+                                    ?>
+
+                                    <tr>
+                                        <td>
+                                            <?php echo $bil++; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row->ISBN; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row->tajukBuku; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row->penulis1; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row->penulis2; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row->tahun; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row->penerbit; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row->namaKategori; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row->statusBuku; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row->lokasi; ?>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                            }
+                            ?>
+                        </table>
                 </form>
             </div>
         </section>
