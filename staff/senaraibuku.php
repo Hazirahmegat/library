@@ -78,7 +78,7 @@
                     <tr>
 
                         <button type="submit" name="submit">PAPAR</button>
-                        <table class="t"><br>
+                        <table class="tsenaraibuku"><br>
                             <br>
                             <tr><b>
                                     <th>BIL</th>

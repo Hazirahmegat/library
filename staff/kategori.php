@@ -67,11 +67,11 @@ require '../include/conn.php';
 
             </div><br>
 
-            <table class="t">
+            <table class="tkategori" align="center">
                 <tr>
-                    <th>Bil</th>
-                    <th>Kategori Buku</th>
-                    <th>Tindakan</th>
+                    <th>BIL</th>
+                    <th>KATEGORI BUKU</th>
+                    <th>TINDAKAN</th>
                 </tr>
                 <?php
                 $bil = 1;

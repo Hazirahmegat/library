@@ -120,7 +120,7 @@ td {
 }
 
 .t {
-    background-color: rgba(230, 237, 243, 0.817);
+    background-color: rgba(45, 60, 72, 0.817);
     margin: auto;
     height: auto;
     width: auto;
@@ -132,8 +132,9 @@ th{
 }
 
 .bg{
-    background-color: beige;
+    background-color: rgb(254, 252, 250);
 }
+
 
 
 input{
