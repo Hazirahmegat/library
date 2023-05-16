@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
 
 <head>
@@ -8,8 +8,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="staff.css">
-
-
 </head>
 
 
@@ -35,7 +33,7 @@
                         <button class="dropbtn">CARIAN</button>
                         <div class="dropdown-content">
                             <a href="peminjam.php">PEMINJAM</a>
-                            
+                            <a href="report.php">LAPORAN BULANAN</a>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -44,6 +42,7 @@
                             <a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
                             <a href="pinjamanbaru.php">REKOD PINJAMAN BARU</a>
                             <a href="rekodpulang.php">REKOD PULANG BUKU</a>
+							<a href="telegram.php">NOTIFICATION TELEGARM</a>
                         </div>
                     </div>
                 </ul>

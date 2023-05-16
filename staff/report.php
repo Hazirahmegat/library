@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
 
 <head>
@@ -44,16 +44,18 @@
                             <a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
                             <a href="pinjamanbaru.php">REKOD PINJAMAN BARU</a>
                             <a href="rekodpulang.php">REKOD PULANG BUKU</a>
-							<a href="telegram.php">NOTIFICATION TELEGARM</a>
+                            <a href="telegram.php">NOTIFICATION TELEGARM</a>
                         </div>
                     </div>
                 </ul>
             </nav>
         </header>
         <section>
-            <fieldset>
-                <legend>REKOD PULANGAN BUKU</legend>
-               
+
+
+        <fieldset>
+                <legend>LAPORAN BULANAN</legend>
+                
             </fieldset>
         </section>
 

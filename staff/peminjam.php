@@ -35,7 +35,7 @@
 						<button class="dropbtn">CARIAN</button>
 						<div class="dropdown-content">
 							<a href="peminjam.php">PEMINJAM</a>
-							
+							<a href="report.php">LAPORAN BULANAN</a>
 						</div>
 					</div>
 					<div class="dropdown">
@@ -44,6 +44,7 @@
 							<a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
 							<a href="pinjamanbaru.php">REKOD PINJAMAN BARU</a>
 							<a href="rekodpulang.php">REKOD PULANG BUKU</a>
+							<a href="telegram.php">NOTIFICATION TELEGARM</a>
 						</div>
 					</div>
 				</ul>
@@ -56,7 +57,7 @@
                     <legend>CARIAN BUKU</legend>
                     <table>
                         <tr>
-                            No.KP Peminjam :<br>
+                            NO.KP PEMINJAM:<br>
                             <input type="text" id="nokp" name="nokpPeminjam" required>
                         </tr><br>
 
@@ -67,10 +68,10 @@
 
                     <table class="t">
                         <tr>
-                            <th>idPeminjam</th>
-                            <th>Nama Peminjam</th>
-                            <th>No.KP Peminjam</th>
-                            <th>Tindakan</th>
+                            <th>ID PEMINJAM</th>
+                            <th>NAMA PEMINJAM</th>
+                            <th>NO.KP PEMINJAM</th>
+                            <th>TINDAKAN</th>
                         </tr>
                         <?php
                         require '../include/conn.php';

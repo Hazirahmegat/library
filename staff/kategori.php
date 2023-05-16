@@ -38,7 +38,7 @@ require '../include/conn.php';
                         <button class="dropbtn">CARIAN</button>
                         <div class="dropdown-content">
                             <a href="peminjam.php">PEMINJAM</a>
-                            
+                            <a href="report.php">LAPORAN BULANAN</a>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -47,6 +47,7 @@ require '../include/conn.php';
 							<a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
 							<a href="pinjamanbaru.php">REKOD PINJAMAN BARU</a>
 							<a href="rekodpulang.php">REKOD PULANG BUKU</a>
+							<a href="telegram.php">NOTIFICATION TELEGARM</a>
 						</div>
 					</div>
                 </ul>

@@ -35,7 +35,7 @@
                         <button class="dropbtn">CARIAN</button>
                         <div class="dropdown-content">
                             <a href="peminjam.php">PEMINJAM</a>
-                            
+                            <a href="report.php">LAPORAN BULANAN</a>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -44,6 +44,7 @@
                             <a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
                             <a href="pinjamanbaru.php">REKOD PINJAMAN BARU</a>
                             <a href="rekodpulang.php">REKOD PULANG BUKU</a>
+                            <a href="telegram.php">NOTIFICATION TELEGARM</a>
                         </div>
                     </div>
                 </ul>
@@ -100,9 +101,22 @@
                             ?>
                         </tr><br>
                         <br>
+
                         <tr>
-                            Lokasi :<br>
-                            <input type="text" id="lokasi" name="lokasi" style="text-transform: uppercase" required>
+                            <label for="lokasi">Lokasi :</label><br>
+                            <br>
+                            <select id="lokasi" name="lokasi" style='width:360px'>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
                         </tr><br>
                         <br>
                         <tr>
@@ -120,6 +134,8 @@
 
                         </tr>
                     </table>
+                </fieldset>
+            </form>
 
         </section>
 

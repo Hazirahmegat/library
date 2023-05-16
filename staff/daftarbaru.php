@@ -35,7 +35,7 @@
                         <button class="dropbtn">CARIAN</button>
                         <div class="dropdown-content">
                             <a href="peminjam.php">PEMINJAM</a>
-
+                            <a href="report.php">LAPORAN BULANAN</a>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -44,8 +44,10 @@
                             <a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
                             <a href="pinjamanbaru.php">REKOD PINJAMAN BARU</a>
                             <a href="rekodpulang.php">REKOD PULANG BUKU</a>
+                            <a href="telegram.php">NOTIFICATION TELEGARM</a>
                         </div>
                     </div>
+
                 </ul>
             </nav>
         </header>
@@ -83,11 +85,23 @@
                             <input type="text" id="notelwaris" name="notelwaris" style="text-transform: uppercase">
                         </tr><br>
                         <tr>
+                            Token Telegram :<br>
+                            <input type="text" id="tokentele" name="tokentele" style="text-transform: uppercase">
+                        </tr><br>
+                        <tr>
+                            Chat ID :<br>
+                            <input type="text" id="chatid" name="chatid" style="text-transform: uppercase">
+                        </tr><br>
+                        
 
                         <tr colspan="2"><br>
                             <button type="submit">SIMPAN</button>
                         </tr>
+
                     </table>
+            </form>
+
+            
 
         </section>
 

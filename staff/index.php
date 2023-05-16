@@ -33,6 +33,7 @@ $namastaff = $row->namaStaff;
 			<nav>
 				<ul>
 					<li><a href="index.php">LAMAN UTAMA</a></li>
+					
 					<div class="dropdown">
 						<button class="dropbtn">BUKU</button>
 						<div class="dropdown-content">
@@ -41,21 +42,25 @@ $namastaff = $row->namaStaff;
 							<a href="senaraibuku.php">SENARAI BUKU</a>
 						</div>
 					</div>
+
 					<div class="dropdown">
 						<button class="dropbtn">CARIAN</button>
 						<div class="dropdown-content">
 							<a href="peminjam.php">PEMINJAM</a>
-							
+							<a href="report.php">LAPORAN BULANAN</a>
 						</div>
 					</div>
+
 					<div class="dropdown">
 						<button class="dropbtn">PEMINJAM</button>
 						<div class="dropdown-content">
 							<a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
 							<a href="pinjamanbaru.php">REKOD PINJAMAN BARU</a>
 							<a href="rekodpulang.php">REKOD PULANG BUKU</a>
+							<a href="telegram.php">NOTIFICATION TELEGARM</a>
 						</div>
 					</div>
+
 				</ul>
 			</nav>
 		</header>

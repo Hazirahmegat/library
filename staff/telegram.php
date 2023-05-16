@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
 
 <head>
@@ -44,26 +44,25 @@
                             <a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
                             <a href="pinjamanbaru.php">REKOD PINJAMAN BARU</a>
                             <a href="rekodpulang.php">REKOD PULANG BUKU</a>
-							<a href="telegram.php">NOTIFICATION TELEGARM</a>
+                            <a href="telegram.php">NOTIFICATION TELEGARM</a>
                         </div>
                     </div>
                 </ul>
             </nav>
         </header>
         <section>
-            <fieldset>
+
+
+        <fieldset>
                 <legend>REKOD PINJAMAN BUKU</legend>
-                <form action="" method="post">
+                <form action="telebot.php" method="post">
                     <tr>
                         <table class="t"><br>
                             <br>
                             <tr><b>
                                     <th>BIL</th>
                                     <th>NAMA</th>
-                                    <th>NO KAD PENGENALAN</th>
                                     <th>NO TEL</th>
-                                    <th>ISBN</th>
-                                    <th>TAJUK BUKU</th>
                                     <th>TARIKH PINJAM</th>
                                     <th>TARIKH PULANG</th>
                                     <th>TINDAKAN</th>
@@ -72,7 +71,7 @@
                             <?php
                             $bil = 1;
                             require '../include/conn.php';
-                            $sql = "SELECT b.namaPeminjam,b.nokpPeminjam,b.noTel,c.ISBN,c.tajukBuku,a.tarikhPinjam,
+                            $sql = "SELECT b.namaPeminjam,b.noTel,a.tarikhPinjam,
                             a.tarikhPulang,a.idBuku,a.idPeminjam FROM `pinjamanbuku` a 
                             inner join peminjam b on a.idPeminjam=b.idPeminjam
                             inner join buku c on c.idBuku=a.idBuku";
@@ -89,16 +88,7 @@
                                         <?php echo $row->namaPeminjam; ?>
                                     </td>
                                     <td>
-                                        <?php echo $row->nokpPeminjam; ?>
-                                    </td>
-                                    <td>
                                         <?php echo $row->noTel; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row->ISBN; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row->tajukBuku; ?>
                                     </td>
                                     <td>
                                         <?php echo $row->tarikhPinjam; ?>
@@ -107,9 +97,8 @@
                                         <?php echo $row->tarikhPulang; ?>
                                     </td>
                                     <td>
-                                    <a href="rekodpulang.php?id=<?php echo $row->idPeminjam; ?>"
-                                        onclick="">kemaskini</a>
-                            </td>
+                                    <button type="submit" name="submit">HANTAR</button>
+                                    </td>
 
                                 </tr>
 

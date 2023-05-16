@@ -55,7 +55,7 @@ while ($row2 = mysqli_fetch_assoc($result3)) {
                         <button class="dropbtn">CARIAN</button>
                         <div class="dropdown-content">
                             <a href="peminjam.php">PEMINJAM</a>
-                            
+                            <a href="report.php">LAPORAN BULANAN</a>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -64,6 +64,7 @@ while ($row2 = mysqli_fetch_assoc($result3)) {
                             <a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
                             <a href="pinjamanbaru.php">REKOD PINJAMAN BARU</a>
                             <a href="rekodpulang.php">REKOD PULANG BUKU</a>
+							<a href="telegram.php">NOTIFICATION TELEGARM</a>
                         </div>
                     </div>
                 </ul>
@@ -76,7 +77,7 @@ while ($row2 = mysqli_fetch_assoc($result3)) {
                 <p>NAMA PEMINJAM :
                     <?php echo $namaPeminjam; ?>
                 </p>
-                <h4>Carian Buku</h4>
+                <h4>CARIAN BUKU</h4>
                 <form action="" method="POST">
                     <table>
                         <tr>
@@ -85,7 +86,7 @@ while ($row2 = mysqli_fetch_assoc($result3)) {
                         </tr><br>
 
                         <tr colspan="2"><br>
-                            <?php if ($jumlahpinjaman <= '2') { ?>
+                            <?php if ($jumlahpinjaman <= '5') { ?>
                                 <button type="submit" name="submit">PAPAR</button>
                             <?php } else {
                                 echo "LIMIT BUKU ADALAH 3";
@@ -124,17 +125,17 @@ while ($row2 = mysqli_fetch_assoc($result3)) {
                                     <input type="text" id="isbn" name="isbn" value="<?php echo $isbn; ?> " readonly>
                                 </tr><br>
                                 <tr>
-                                    Tajuk Buku :<br>
+                                    TAJUK BUKU :<br>
                                     <input type="text" id="tajukbuku" name="tajukbuku" value="<?php echo $tajukBuku; ?> "
                                         readonly>
                                 </tr><br>
                                 <tr>
-                                    Tarikh Pinjam :<br>
+                                    TARIKH PINJAM :<br>
                                     <input type="text" id="tarikhpinjam" name="tarikhpinjam"
                                         value="<?php echo $date = date('d/m/Y'); ?> " required>
                                 </tr><br>
                                 <tr>
-                                    Tarikh Pulang :<br>
+                                    TARIKH PULANG :<br>
                                     <input type="date" id="tarikhpulang" name="tarikhpulang" required>
                                 </tr><br>
 

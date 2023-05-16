@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 12, 2023 at 03:45 AM
+-- Generation Time: May 14, 2023 at 09:24 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -56,11 +56,12 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`idBuku`, `ISBN`, `tajukBuku`, `penulis1`, `penulis2`, `tahun`, `penerbit`, `namaKategori`, `lokasi`, `statusBuku`) VALUES
-(3, 1234, 'logbook', 'hazirah', '', 2019, 'snka', '16', 0, ''),
-(12, 12345, 'MATH SUCCESS', 'Choo wan yat', 'Yee Sook Fen', 2015, 'PELANGI', '19', 0, ''),
-(13, 978983473, 'MUET', 'Yeoh Wei Tzee', '', 2013, 'OXFORD', '20', 0, ''),
-(14, 865279303, 'SANG KANCIL', 'AINA', '', 2012, 'AIN', '18', 0, ''),
-(16, 126543267, 'MARVEL', 'MAHARANI', '', 2011, 'ELINE', '11', 12, 'ADA');
+(12, 12345, 'MATH SUCCESS', 'Choo wan yat', 'Yee Sook Fen', 2015, 'PELANGI', '19', 3, 'DIPINJAM'),
+(13, 978983473, 'MUET', 'Yeoh Wei Tzee', '', 2013, 'OXFORD', '20', 0, 'DIPINJAM'),
+(14, 865279303, 'SANG KANCIL', 'AINA', '', 2012, 'AIN', '18', 2, 'ADA'),
+(16, 126543267, 'MARVEL', 'MAHARANI', '', 2011, 'ELINE', '11', 12, 'ADA'),
+(25, 987654321, 'BUAYA', 'ATEN', '', 2010, 'PELANGI1', '24', 10, 'TIADA'),
+(31, 123416789, 'CAHAYA BULAN', 'NUR FATIN', '', 2010, 'PELANGI1', '25', 5, 'DIPINJAM');
 
 -- --------------------------------------------------------
 
@@ -81,8 +82,8 @@ INSERT INTO `kategoribuku` (`idKategori`, `namaKategori`) VALUES
 (11, 'Novel'),
 (18, 'Kanak-kanak'),
 (19, 'Lain-lain'),
-(20, 'Akademik'),
-(21, 'Fiksyen');
+(21, 'Fiksyen'),
+(25, 'KOMIK');
 
 -- --------------------------------------------------------
 
@@ -95,17 +96,22 @@ CREATE TABLE `peminjam` (
   `namaPeminjam` varchar(200) NOT NULL,
   `nokpPeminjam` varchar(20) NOT NULL,
   `katalaluan` varchar(300) NOT NULL,
-  `noTel` int NOT NULL,
+  `noTel` varchar(11) NOT NULL,
   `namaWaris` varchar(200) NOT NULL,
-  `noTelWaris` int NOT NULL
+  `noTelWaris` int NOT NULL,
+  `tokenTele` varchar(250) NOT NULL,
+  `chatid` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `peminjam`
 --
 
-INSERT INTO `peminjam` (`idPeminjam`, `namaPeminjam`, `nokpPeminjam`, `katalaluan`, `noTel`, `namaWaris`, `noTelWaris`) VALUES
-(1, 'aten', '020825090038', '$2y$10$3igU/adg.8YmDt3KiZUCtOagiG3x0xF1T.dc6tiavZLvZ1QntRDqO', 195612029, 'hazirah', 175536169);
+INSERT INTO `peminjam` (`idPeminjam`, `namaPeminjam`, `nokpPeminjam`, `katalaluan`, `noTel`, `namaWaris`, `noTelWaris`, `tokenTele`, `chatid`) VALUES
+(1, 'NUR FATIN AZIRA', '020825090038', '$2y$10$3igU/adg.8YmDt3KiZUCtOagiG3x0xF1T.dc6tiavZLvZ1QntRDqO', '0195612029', 'hazirah', 175536169, '', 0),
+(3, 'NUR HAZIRAH', '020524020052', '1234', '0175452671', 'SHAHRIM', 195536162, '', 0),
+(4, 'NUR HAFISHARMIMI', '020320020456', '145', '0175428965', 'MOHAMAD', 176523456, '', 0),
+(5, 'SITI MARIAM', '811206075198', '12345', '0176524523', 'MOHAMAD', 196475321, '', 0);
 
 -- --------------------------------------------------------
 
@@ -115,14 +121,22 @@ INSERT INTO `peminjam` (`idPeminjam`, `namaPeminjam`, `nokpPeminjam`, `katalalua
 
 CREATE TABLE `pinjamanbuku` (
   `idPinjaman` int NOT NULL,
-  `nokpPeminjam` varchar(20) NOT NULL,
-  `ISBN1` int NOT NULL,
-  `ISBN2` int DEFAULT NULL,
-  `ISBN3` int DEFAULT NULL,
+  `idPeminjam` int NOT NULL,
+  `idBuku` int NOT NULL,
   `tarikhPinjam` date NOT NULL,
   `tarikhPulang` date NOT NULL,
-  `denda` decimal(10,0) NOT NULL
+  `denda` decimal(10,0) DEFAULT NULL,
+  `tarikhsebenarpulang` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `pinjamanbuku`
+--
+
+INSERT INTO `pinjamanbuku` (`idPinjaman`, `idPeminjam`, `idBuku`, `tarikhPinjam`, `tarikhPulang`, `denda`, `tarikhsebenarpulang`) VALUES
+(6, 1, 13, '2023-04-18', '2023-04-18', NULL, NULL),
+(9, 4, 31, '2023-04-18', '2023-04-21', NULL, NULL),
+(10, 4, 12, '2023-05-08', '2023-05-17', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -158,8 +172,7 @@ ALTER TABLE `admin`
 -- Indexes for table `buku`
 --
 ALTER TABLE `buku`
-  ADD PRIMARY KEY (`idBuku`),
-  ADD UNIQUE KEY `idKategori` (`namaKategori`);
+  ADD PRIMARY KEY (`idBuku`);
 
 --
 -- Indexes for table `kategoribuku`
@@ -178,8 +191,7 @@ ALTER TABLE `peminjam`
 -- Indexes for table `pinjamanbuku`
 --
 ALTER TABLE `pinjamanbuku`
-  ADD PRIMARY KEY (`idPinjaman`),
-  ADD UNIQUE KEY `nokpPeminjam` (`nokpPeminjam`);
+  ADD PRIMARY KEY (`idPinjaman`);
 
 --
 -- Indexes for table `staff`
@@ -202,25 +214,25 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `idBuku` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idBuku` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `kategoribuku`
 --
 ALTER TABLE `kategoribuku`
-  MODIFY `idKategori` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `idKategori` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `peminjam`
 --
 ALTER TABLE `peminjam`
-  MODIFY `idPeminjam` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idPeminjam` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `pinjamanbuku`
 --
 ALTER TABLE `pinjamanbuku`
-  MODIFY `idPinjaman` int NOT NULL AUTO_INCREMENT;
+  MODIFY `idPinjaman` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `staff`

@@ -35,7 +35,7 @@
                         <button class="dropbtn">CARIAN</button>
                         <div class="dropdown-content">
                             <a href="peminjam.php">PEMINJAM</a>
-                            
+                            <a href="report.php">LAPORAN BULANAN</a>
                         </div>
                     </div>
                     <div class="dropdown">
@@ -44,6 +44,7 @@
                             <a href="daftarbaru.php">DAFTAR PEMINJAM BARU</a>
                             <a href="pinjamanbaru.php">REKOD PINJAMAN BARU</a>
                             <a href="rekodpulang.php">REKOD PULANG BUKU</a>
+							<a href="telegram.php">NOTIFICATION TELEGARM</a>
                         </div>
                     </div>
                 </ul>
@@ -55,13 +56,13 @@
 
                 <table class="t">
                     <tr>
-                        <td>No.KP Peminjam :</td>
-                        <td>Nama :</td>
-                        <td>Tajuk Buku 1</td>
-                        <td>Tajuk Buku 2</td>
-                        <td>Tajuk Buku 3</td>
-                        <td>Tarikh Pinjam Buku</td>
-                        <td>Tarikh Pulang Buku</td>
+                        <td>NO.KP PEMINJAM :</td>
+                        <td>NAMA :</td>
+                        <td>TAJUK BUKU 1</td>
+                        <td>TAJUK BUKU 2</td>
+                        <td>TAJUK BUKU 3</td>
+                        <td>TARIKH PINJAM BUKU</td>
+                        <td>TARIKH PULANG BUKU</td>
                     </tr>
                     <?php
                     $bil = 1;
